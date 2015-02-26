@@ -3,35 +3,71 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-#img-logo{
-	width: 30px;
-	height: 30px;
-
-	display: inline;
+html,body{
+	height:100%;
 }
 
-#title-block{
-	display: block;
+body { 
+	background: url(../img/background.jpg) no-repeat center center fixed; 
 }
 
-#lilijnka{
-	width: 200px;
-	height: 200px;
-
-	display: inline;
-
+.jumbotron {
+	min-height: 100vh;
+	background: none;
+	color: white;
+	/*text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;*/
 }
 
-/*#h1-main-title{
-	max-width: 850px;
+.jumbotron-container-container{
+	padding-bottom: 30px;
+}
 
-	margin-left: 50px;
+.container-custom{
+	min-height: 100%;
+}
 
-	display: inline;
+.logo{
+	background: #fcfcfc;
+	margin-left: auto;
+	margin-right: auto;
+}
 
-	float: right;
+.patron{
+	/*max-width: 300px;*/
+	background: #fcfcfc;
+}
+
+.patron:hover{
+	border: #57a957 1px solid;
+	background: #eeeeee;
+}
+
+.row-custom{
+	padding-bottom: 20px;
+	margin-top: 100px;
+}
+
+/*#recent_events{
+	margin-bottom: 25%;
 }*/
+
+.light-grey{
+	background: url(../img/light-grey.png) repeat;
+}
+
+.dark-grey{
+	background: url(../img/dark-grey.png) repeat;
+}
+
+h1, h2, h3, h4, h5, p{
+	font-weight: 600;
+	color: white;
+}
+
+footer{
+	padding-top: 20px;
+	text-align: center;
+}
 
 
 
