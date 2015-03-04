@@ -1,6 +1,42 @@
 <!doctype html>
 <?php
+session_start();
+
+include './etc/db_access.php';
+
+// Create connection
+$db_con = mysqli_connect($db_host, $db_username, $db_password)
+		or die("Unable to connect to MySQL");
+
+// Check connection
+if (mysqli_connect_errno()) {
+	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+// polish characters
+include './php/polish_characters.php';
+
+// select a database to work with
+$selected = mysqli_select_db($db_con, $db_dbname)
+		or die("Could not select " . $db_dbname);
+// sets the link group
+$linkGroup;
+if (isset($_GET["linkGroup"]) && !empty($_GET["linkGroup"])) {
+	$linkGroup = $_GET["linkGroup"];
+} else {
+	$linkGroup = "home";
+}
+
+// sets the link
+$subpage;
+if (isset($_GET["link"]) && !empty($_GET["link"])) {
+	$subpage = $_GET["link"];
+} else {
+	$subpage = "home";
+}
+
 include './php/scripts.php'; // gets scripts
+
 ?>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -26,7 +62,7 @@ include './php/scripts.php'; // gets scripts
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <body id="<?php echo $subpage?>" data-spy="scroll" data-target=".navbar-fixed-top">
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -36,13 +72,29 @@ include './php/scripts.php'; // gets scripts
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand page-scroll" href="#page-top">ZHP Aberdeen</a>
+					<a class="navbar-brand page-scroll" href="<?php isInParentTab($subpage, "home") ?>#home">ZHP Aberdeen</a>
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a class="page-scroll" href="#page-top">Home</a></li>
-						<li><a class="page-scroll" href="#troop">O drużynie</a></li>
-						<li><a class="page-scroll" href="#recent_events">Aktualności</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" aria-expanded="false" role="button" data-toggle="dropdown" href="#">
+								Home
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#home">Home</a>
+								</li>
+								<li>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#about_troop">O drużynie</a>
+								</li>
+								<li>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#recent_events">Aktualności</a>
+								</li>
+							</ul>
+						</li>
+						<li></li>
+						<li></li>
 						<li class="dropdown">
 							<a class="dropdown-toggle" aria-expanded="false" role="button" data-toggle="dropdown" href="#">
 								Drużyna
@@ -50,15 +102,15 @@ include './php/scripts.php'; // gets scripts
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li>
-									<a href="#">Wydarzenia</a>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "events") ?>#events">Wydarzenia</a>
 								</li>
 								<li class="disabled">
-									<a href="#">Kronika</a>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "chronicle") ?>#chronicle">Kronika</a>
 								</li>
 								<li class="divider"></li>
 								<li class="dropdown-header">Techniczne:</li>
 								<li class="disabled">
-									<a href="#">Umundurowanie</a>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "uniforms") ?>#uniforms">Umundurowanie</a>
 								</li>
 							</ul>
 						</li>
@@ -69,13 +121,13 @@ include './php/scripts.php'; // gets scripts
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li>
-									<a href="#">Książki</a>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "books") ?>#books">Książki</a>
 								</li>
 								<li class="disabled">
-									<a href="#">Dokumenty</a>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "documents") ?>#documents">Dokumenty</a>
 								</li>
 								<li>
-									<a href="#">Śpiewnik</a>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "songbook") ?>#songbook">Śpiewnik</a>
 								</li>
 							</ul>
 						</li>
@@ -131,106 +183,21 @@ include './php/scripts.php'; // gets scripts
 
 			</div>
 		</nav>
-		<section id="intro" class="container-custom">
-			<div class="jumbotron">
-				<div class="container dark-grey jumbotron-container-container">
-					<span id="title-block">
-						<!--<img id="lilijnka" src="img/logo_medium.png"/>-->
-						<h1 id="h1-main-title">Związek Harcerstwa Polskiego w Aberdeen</h1>
-					</span>
 
-					<div class="row">
-						<div class="col-md-4">
-							<img class="img-circle img-responsive logo" src="img/logo_medium.png" />
-						</div>
-						<div class="col-md-8">
-							<p>"Mam szczerą wolę całym życiem pełnić służbę Bogu i Polsce, nieść chętną pomoc bliźnim i być posłusznym Prawu Harcerskiemu." </p>
-							<p> ~ Przyrzeczenie Harcerskie ~ </p>
-						</div>
-					
-						<div class="col-md-7">
-							<h3>Patroni</h3>
-						</div>
-						<div class="col-md-4">
-							<a target="_blank" href="http://edynburg.msz.gov.pl/pl/p/edynburg_gb_k_pl/"><img class="img-thumbnail img-responsive patron" src="img/konsulat.png" /></a>
-						</div>
-						<div class="col-md-4">
-							<a target="_blank" href="http://www.pangeamagazine.com/?lang=pl"><img class="img-thumbnail img-responsive patron" src="img/pangea.png" /></a>
-						</div>
-					</div>
-					<!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
-				</div>
-			</div>
-		</section>
-		<section id="troop" class="container-custom">	
-			<!--About the troop-->
-			<div class="container container-custom">
-				<div class="row dark-grey row-custom">
-					<div class="col-md-5">
-						<h2>Nasza drużyna</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					<div class="col-md-7">
-						<h2>Zdjęcia</h2>
-						<div id="myCarousel" class="carousel slide" data-ride="carousel">
-							<?php
-							$directory = "./img/slideshow";
-							$images = getFilesFromFolder($directory);
+		<?php
+		switch ($subpage) {
+			case "home" : include './subpages/home.php'; break;
+			case "events" : include './subpages/events.php'; break;
+			case "books" : include './subpages/books.php'; break;
+			case "songbook" : include './subpages/songbook.php'; break;
 
-							// Indicators
-							echo "<ol class='carousel-indicators'>\n
-						  <li data-target='#myCarousel' data-slide-to='0' class='active'></li>";
-							for ($i = 1; $i < count($images); $i++) {
-								echo "<li data-target='#myCarousel' data-slide-to='" . $i . "'></li>";
-							}
-							echo "</ol>";
+			// default
+			//default : include './subpages/home.php'; break;
+		}
+		?>
 
-							// Wrapper for slides
-							echo "<div class='carousel-inner' role='listbox'>";
 
-							echo "<div class='item active'>
-							  <img src='./img/slideshow/" . $images[0] . "' alt='Chania'>
-						  </div>";
-							for ($i = 1; $i < count($images); $i++) {
-								echo "<div class='item'>
-								  <img src='./img/slideshow/" . $images[$i] . "' alt='Chania'>
-							  </div>";
-							}
-
-							echo "</div>";
-							?>
-							<!-- Left and right controls -->
-							<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-								<span class="sr-only">Poprzedni</span>
-							</a>
-							<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								<span class="sr-only">Następny</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="recent_events" class="container-custom">
-			<!--Recent events-->
-			<div class="container container-content">
-				<div class="row dark-grey row-custom">
-					<div class="col-md-12">
-						<h2>Najnowsze wydarzenia</h2>
-					</div>
-					<div class="col-md-6">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					<div class="col-md-6">
-
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--<section class="container-custom">-->
+<!--<section class="container-custom">-->
 		<div class="container-content container ">
 			<div class="row dark-grey row-custom">
 				<footer>
