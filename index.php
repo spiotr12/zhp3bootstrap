@@ -19,13 +19,6 @@ include './php/polish_characters.php';
 // select a database to work with
 $selected = mysqli_select_db($db_con, $db_dbname)
 		or die("Could not select " . $db_dbname);
-// sets the link group
-$linkGroup;
-if (isset($_GET["linkGroup"]) && !empty($_GET["linkGroup"])) {
-	$linkGroup = $_GET["linkGroup"];
-} else {
-	$linkGroup = "home";
-}
 
 // sets the link
 $subpage;
@@ -36,7 +29,6 @@ if (isset($_GET["link"]) && !empty($_GET["link"])) {
 }
 
 include './php/scripts.php'; // gets scripts
-
 ?>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -62,7 +54,7 @@ include './php/scripts.php'; // gets scripts
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-    <body id="<?php echo $subpage?>" data-spy="scroll" data-target=".navbar-fixed-top">
+    <body id="<?php echo $subpage ?>" data-spy="scroll" data-target=".navbar-fixed-top">
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -86,10 +78,13 @@ include './php/scripts.php'; // gets scripts
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#home">Home</a>
 								</li>
 								<li>
-									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#about_troop">O drużynie</a>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#about_troop">O nas</a>
+								</li>
+								<li class="disabled">
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#recent_events">Aktualności</a>
 								</li>
 								<li>
-									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#recent_events">Aktualności</a>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#contact">Kontakt</a>
 								</li>
 							</ul>
 						</li>
@@ -106,6 +101,9 @@ include './php/scripts.php'; // gets scripts
 								</li>
 								<li class="disabled">
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "chronicle") ?>#chronicle">Kronika</a>
+								</li>
+								<li>
+									<a class="page-scroll" target="_blank" href="gallery">Galeria</a>
 								</li>
 								<li class="divider"></li>
 								<li class="dropdown-header">Techniczne:</li>
@@ -164,35 +162,90 @@ include './php/scripts.php'; // gets scripts
 								</li>
 							</ul>
 						</li>
-						<li class="dropdown">
-							<a class="dropdown-toggle" aria-expanded="false" role="button" data-toggle="dropdown"  href="#">
-								Użytkownik
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li>
-									<a href="#">Zaloguj</a>
-								</li>
-								<li>
-									<a href="#">Rejestracja</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div><!--/.nav-collapse -->
 
+					</ul>
+					<!--<div class="navbar-collapse collapse">-->
+					<ul class="nav navbar-nav pull-nav-right">
+						<?php
+						if (isset($_SESSION['sess_user_active']) && $_SESSION['sess_user_active'] == true) {
+							?>
+							<li class="dropdown">
+								<!--when user is logged in-->
+								<a class="dropdown-toggle" aria-expanded="false" role="button" data-toggle="dropdown"  href="#">
+									<?php
+									echo $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname'];
+									?>
+									<span class="caret"></span>
+									<img class="avatar img-circle" src="img/avatars/
+									<?php
+									if (file_exists("img/avatars/" . $_SESSION['sess_email'] . ".jpg")) {
+										echo $_SESSION['sess_email'];
+									} else {
+										echo "default";
+									}
+									?>.jpg"/>
+								</a>
+								<ul class="dropdown-menu" role="menu">
+									<li>
+										<a href="#">Profil</a>
+									</li>
+									<li>
+										<a href="index.php?link=logout">Wyloguj</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+
+							</li>
+							<?php
+						} else {
+							?>
+							<!--if no one is logged in-->
+							<li class="dropdown">
+								<a class="dropdown-toggle" aria-expanded="false" role="button" data-toggle="dropdown"  href="#">
+									Użytkownik
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" role="menu">
+									<li>
+										<a class="page-scroll" href="<?php isInParentTab($subpage, "login") ?>#login">Zaloguj</a>
+									</li>
+									<li>
+										<a class="page-scroll" href="<?php isInParentTab($subpage, "login") ?>#register">Rejestracja</a>
+									</li>
+								</ul>
+							</li>
+							<?php
+						}
+						?>
+					</ul>
+					<!--</div>-->
+				</div><!--/.nav-collapse -->
 			</div>
 		</nav>
 
 		<?php
 		switch ($subpage) {
-			case "home" : include './subpages/home.php'; break;
-			case "events" : include './subpages/events.php'; break;
-			case "books" : include './subpages/books.php'; break;
-			case "songbook" : include './subpages/songbook.php'; break;
+			case "home" : include './subpages/home.php';
+				break;
+			case "events" : include './subpages/events.php';
+				break;
+			case "singleEvent" : include './subpages/singleEvent.php';
+				break;
+			case "books" : include './subpages/books.php';
+				break;
+			case "songbook" : include './subpages/songbook.php';
+				break;
+			case "singleSong" : include './subpages/singleSong.php';
+				break;
+			case "login" : include './subpages/login.php';
+				break;
+			case "logout" : include './subpages/logout.php';
+				break;
 
-			// default
-			//default : include './subpages/home.php'; break;
+			//default
+			default : include './subpages/home.php';
+				break;
 		}
 		?>
 
@@ -223,9 +276,9 @@ include './php/scripts.php'; // gets scripts
 		(function (b, o, i, l, e, r) {
 			b.GoogleAnalyticsObject = l;
 			b[l] || (b[l] =
-					function () {
-						(b[l].q = b[l].q || []).push(arguments)
-					});
+				function () {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
 			b[l].l = +new Date;
 			e = o.createElement(i);
 			r = o.getElementsByTagName(i)[0];

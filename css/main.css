@@ -11,10 +11,28 @@ body {
 	background: url(../img/background.jpg) no-repeat center center fixed; 
 }
 
-.jumbotron {
-	min-height: 100vh;
+a.avatar{
+	display: block;
+}
+
+.avatar{
+	float: right;
+	max-height: 48px;
+	max-width: 48px;
+
+	padding: 1px;
+	margin: 1px;
+	margin-top: -14px;
+	margin-left: 5px;
+}
+
+.jumbotron{
 	background: none;
 	color: white;
+}
+
+.jumbotron-custom {
+	min-height: 100vh;
 	/*text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;*/
 }
 
@@ -59,9 +77,13 @@ body {
 	background: url(../img/dark-grey.png) repeat;
 }
 
-h1, h2, h3, h4, h5, p{
+h1, h2, h3, h4, h5, p, label{
 	font-weight: 600;
 	color: white;
+}
+
+p{
+	font-size: 16px;
 }
 
 footer{
@@ -69,16 +91,42 @@ footer{
 	text-align: center;
 }
 
+.event-container{
+	padding-bottom: 20px;
+}
+
+.event-single p{
+	font-size: 18px;
+}
+
+.contact-list{
+	color: white;
+}
+
+.test-color{
+	background-color: yellow;
+}
+
+.pull-nav-right{
+	float: right;
+}
 
 
+@media (max-width : 767px) {
+	.pull-nav-right{
+		float: none;
+	}
 
+	.avatar{
+		float: right;
+		max-height: 43px;
+		max-width: 43px;
 
-
-
-
-
-
-
-
+		padding: 1px;
+		margin: 1px;
+		margin-top: -11px;
+		margin-left: 5px;
+	}
+}
 
 

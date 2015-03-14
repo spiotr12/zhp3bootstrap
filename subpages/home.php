@@ -3,7 +3,7 @@
 --> 
 
 <section id="home" class="container-custom">
-	<div class="jumbotron">
+	<div class="jumbotron .jumbotron-custom">
 		<div class="container dark-grey jumbotron-container-container">
 			<span id="title-block">
 				<!--<img id="lilijnka" src="img/logo_medium.png"/>-->
@@ -33,15 +33,24 @@
 		</div>
 	</div>
 </section>
+
 <section id="about_troop" class="container-custom">	
 	<!--About the troop-->
 	<div class="container container-custom">
 		<div class="row dark-grey row-custom">
-			<div class="col-md-5">
-				<h2>Nasza drużyna</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div class="col-md-6">
+				<h2>Coś niecoś o nas</h2>
+				<p>
+					W czerwcu 2013 roku zostal zalozony Krag Harcerstwa Starszego, zlozony z osob doroslych, ktorych sercu bliska jest idea polskiego harcerstwa na emigracji w Aberdeen. Krag nazywa sie Bractwo Zelaznej Brzozy. W 2014r. czlonkowie kregu odbyli Kurs Agricola, prowadzony przez instruktorke ZHP, Katrzyne Stec. W 2015 r. powstala pierwsza Gromada Zuchowa ZHP w Aberdeen. W Styczniu 2015 jeden z kursantow kursu Agricola, Marcin Bednarz rozpoczal owocna prace nad powolaniem druzyny wedrowniczej w Glasgow, czego skutkiem jest powstanie ZHP Glasgow. Obecnie zbiorki zuchowe (dzieci w wieku 7-11/12 lat) odbywaja sie od 18-19.30 w Grammar School na Skene Street w ramach polskiej szkoly Sobotniej. Krag Harcerstwa Starszego w marcu 2015 r. zamknal swoj okres probny i otrzymal nazwe 'Bractwo Zelaznej Brzozy'. Dorosli czlonkowie wspomagaja gromade zuchowa materialnie oraz podejmuja starania nad tworzeniem kolejnych druzyn harcerskich i patroli wedrowniczych. Wspolpracujemy rowniez z ZHP Edynburg i wspomagamy powstawanie nowych osrodkow ZHP w Szkocji w porozumieniu z Wielkobrytyjska Choragwia Harcerzy i Wielkobrytyjska Choragwia Harcerek ZHP.
+				</p>
+				<p>
+					Oprocz pracy z dziecmi, mamy szeroka oferte dla mlodziezy, od wedrowek po zajecia survivalowe, obronne w oparciu o najlepsze tradycje polskiej emigracji w Wielkiej Brytanii.
+				</p>
+				<p>
+					Wszystkich ktorym bliska jest idea polskiego harcerstwa w Aberdeen zapraszamy do kontaktu na wskazane ponizej adresy. Czuwaj!
+				</p>
 			</div>
-			<div class="col-md-7">
+			<div class="col-md-6">
 				<h2>Zdjęcia</h2>
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					<?php
@@ -84,19 +93,44 @@
 		</div>
 	</div>
 </section>
-<section id="recent_events" class="container-custom">
+
+<section id="recent_events" class="container-custom" style="display: none">
 	<!--Recent events-->
 	<div class="container container-content">
 		<div class="row dark-grey row-custom">
 			<div class="col-md-12">
 				<h2>Najnowsze wydarzenia</h2>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-5">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
-			<div class="col-md-6">
-
+			<div class="col-md-5 col-lg-offset-1">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="contact" class="container-custom">
+	<!--Recent events-->
+	<div class="container container-content">
+		<div class="row dark-grey row-custom">
+			<div class="col-md-12 col-lg-offset-1">
+				<h2>Skontaktuj się z nami</h2>
+				<h3>Katarzyna Stać</h3>
+				<ul class="contact-list">
+					<li>Funkcja: &ensp;Drużynowa</li>
+					<li>Email: &ensp; <a class="label label-warning" href="mailto:stec.katarzyna89@gmail.com">stec.katarzyna89@gmail.com</a></li>
+				</ul>
+				<h3>Krzysztof Orchowski</h3>
+				<ul class="contact-list">
+					<li>Funkcja: &ensp;Kierowni Kręgu Harcerstwa Starszego</li>
+					<li>Email: &ensp; <a class="label label-warning" href="mailto:k.orchowski.08@aberdeen.ac.uk">k.orchowski.08@aberdeen.ac.uk</a></li>
+				</ul>
+				<h3>Piotr Starzec</h3>
+				<ul class="contact-list">
+					<li>Funkcja: &ensp;Skarbnik oraz Administrator strony</li>
+					<li>Email: &ensp; <a class="label label-warning" href="mailto:starzec.piotr.12@gmail.com">starzec.piotr.12@gmail.com</a></li>
+				</ul>
 			</div>
 		</div>
 	</div>

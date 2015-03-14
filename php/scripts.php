@@ -15,11 +15,6 @@ function getFilesFromFolder($directory) {
 	return $images;
 }
 
-// execute query and returns a map with values
-function executeQuery($sql) {
-	
-}
-
 // checks if the subpage is open, an dif not add full link to anchor, else keep just the #id
 function isInParentTab($subpage, $parentTab){
 	if ($subpage != $parentTab){
