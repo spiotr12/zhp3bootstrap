@@ -111,6 +111,14 @@ footer{
 	float: right;
 }
 
+.summernote-text-editor{
+	background-color: #444;
+	color: white;
+}
+
+.note-editable{
+	min-height: 40px;
+}
 
 @media (max-width : 767px) {
 	.pull-nav-right{

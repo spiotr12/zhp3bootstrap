@@ -1,6 +1,23 @@
 <!--
 	set nav buttons class to .active
 --> 
+<?php
+if (!empty($_GET['error']) && $_GET['error'] == 'success') {
+	?>
+	<div class="container">
+		<div class="row pull-left">
+			<h3>
+				<label class="label label-success">
+					<?php
+					echo "Nastąpiło poprawne zalogowanie do systemu!";
+					?>
+				</label>
+			</h3>
+		</div>
+	</div>
+	<?php
+}
+?>
 
 <section id="home" class="container-custom">
 	<div class="jumbotron .jumbotron-custom">
@@ -41,7 +58,16 @@
 			<div class="col-md-6">
 				<h2>Coś niecoś o nas</h2>
 				<p>
-					W czerwcu 2013 roku zostal zalozony Krag Harcerstwa Starszego, zlozony z osob doroslych, ktorych sercu bliska jest idea polskiego harcerstwa na emigracji w Aberdeen. Krag nazywa sie Bractwo Zelaznej Brzozy. W 2014r. czlonkowie kregu odbyli Kurs Agricola, prowadzony przez instruktorke ZHP, Katrzyne Stec. W 2015 r. powstala pierwsza Gromada Zuchowa ZHP w Aberdeen. W Styczniu 2015 jeden z kursantow kursu Agricola, Marcin Bednarz rozpoczal owocna prace nad powolaniem druzyny wedrowniczej w Glasgow, czego skutkiem jest powstanie ZHP Glasgow. Obecnie zbiorki zuchowe (dzieci w wieku 7-11/12 lat) odbywaja sie od 18-19.30 w Grammar School na Skene Street w ramach polskiej szkoly Sobotniej. Krag Harcerstwa Starszego w marcu 2015 r. zamknal swoj okres probny i otrzymal nazwe 'Bractwo Zelaznej Brzozy'. Dorosli czlonkowie wspomagaja gromade zuchowa materialnie oraz podejmuja starania nad tworzeniem kolejnych druzyn harcerskich i patroli wedrowniczych. Wspolpracujemy rowniez z ZHP Edynburg i wspomagamy powstawanie nowych osrodkow ZHP w Szkocji w porozumieniu z Wielkobrytyjska Choragwia Harcerzy i Wielkobrytyjska Choragwia Harcerek ZHP.
+					W czerwcu 2013 roku zostal zalozony Krag Harcerstwa Starszego, zlozony z osob doroslych, ktorych sercu bliska jest idea polskiego harcerstwa na emigracji w Aberdeen. Krag nazywa sie Bractwo Zelaznej Brzozy. 
+				</p>
+				<p>	
+					W 2014r. czlonkowie kregu odbyli Kurs Agricola, prowadzony przez instruktorke ZHP, Katrzyne Stec. W 2015 r. powstala pierwsza Gromada Zuchowa ZHP w Aberdeen. W Styczniu 2015 jeden z kursantow kursu Agricola, Marcin Bednarz rozpoczal owocna prace nad powolaniem druzyny wedrowniczej w Glasgow, czego skutkiem jest powstanie ZHP Glasgow. 
+				</p>
+				<p>	
+					Obecnie zbiorki zuchowe (dzieci w wieku 7-11/12 lat) odbywaja sie od 18-19.30 w Grammar School na Skene Street w ramach polskiej szkoly Sobotniej. 
+				</p>
+				<p>	
+					Krag Harcerstwa Starszego w marcu 2015 r. zamknal swoj okres probny i otrzymal nazwe 'Bractwo Zelaznej Brzozy'. Dorosli czlonkowie wspomagaja gromade zuchowa materialnie oraz podejmuja starania nad tworzeniem kolejnych druzyn harcerskich i patroli wedrowniczych. Wspolpracujemy rowniez z ZHP Edynburg i wspomagamy powstawanie nowych osrodkow ZHP w Szkocji w porozumieniu z Wielkobrytyjska Choragwia Harcerzy i Wielkobrytyjska Choragwia Harcerek ZHP.
 				</p>
 				<p>
 					Oprocz pracy z dziecmi, mamy szeroka oferte dla mlodziezy, od wedrowek po zajecia survivalowe, obronne w oparciu o najlepsze tradycje polskiej emigracji w Wielkiej Brytanii.

@@ -50,8 +50,11 @@ include './php/scripts.php'; // gets scripts
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
 
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/summernote.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body id="<?php echo $subpage ?>" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -187,7 +190,7 @@ include './php/scripts.php'; // gets scripts
 								</a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="#">Profil</a>
+										<a href="index.php?link=profile">Profil</a>
 									</li>
 									<li>
 										<a href="index.php?link=logout">Wyloguj</a>
@@ -230,17 +233,21 @@ include './php/scripts.php'; // gets scripts
 				break;
 			case "events" : include './subpages/events.php';
 				break;
-			case "singleEvent" : include './subpages/singleEvent.php';
+			case "singleEvent" : include './subpages/event.php';
 				break;
 			case "books" : include './subpages/books.php';
 				break;
 			case "songbook" : include './subpages/songbook.php';
 				break;
-			case "singleSong" : include './subpages/singleSong.php';
+			case "singleSong" : include './subpages/song.php';
 				break;
 			case "login" : include './subpages/login.php';
 				break;
 			case "logout" : include './subpages/logout.php';
+				break;
+			case "profile" : include './subpages/profile.php';
+				break;
+			case "songEdit" : include './subpages/songEditor.php';
 				break;
 
 			//default
@@ -262,7 +269,9 @@ include './php/scripts.php'; // gets scripts
 		</div>
 		<!--</section>-->
 	</body>
+	<!--standard scripts start-->
 	<script src="js/vendor/jquery-1.11.2.js"></script>
+
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
 
 	<script src="js/vendor/bootstrap.min.js"></script>
@@ -270,7 +279,19 @@ include './php/scripts.php'; // gets scripts
 	<script src="js/vendor/scrolling-nav.js"></script>
 
 	<script src="js/main.js"></script>
+	<!--standard scripts end-->
 
+	<!--summernote text editor start-->
+	<script src="js/summernote.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$('#summernote').summernote();
+//			$('textarea.note-codable').attr('name', 'editorTextArea');
+//			$('textarea.note-codable').attr('id', 'editorTextArea');
+		});
+	</script>
+	<!--summernote text editor start-->
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 	<script>
 		(function (b, o, i, l, e, r) {

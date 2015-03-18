@@ -32,21 +32,6 @@
 				<?php
 			}
 			?>
-			<?php
-			if (!empty($_GET['error']) && $_GET['error'] == 'success') {
-				?>
-				<div class="col-md-10 col-lg-offset-2">
-					<h3>
-						<label class="label label-success">
-							<?php
-								echo "Nastąpiło poprawne zalogowanie do systemu!";
-							?>
-						</label>
-					</h3>
-				</div>
-				<?php
-			}
-			?>
 			<div class="col-md-4 col-md-offset-2">
 				<h2>Zaloguj się</h2>
 				<form role="form" name="login" action="./php/login.php" method="post">
@@ -97,7 +82,7 @@
 				<div class="col-md-4 col-md-offset-2">
 					<div class="form-group">
 						<label for="email">Email:</label>
-						<input type="email" class="form-control" name="email" id="email" placeholder="email@example.com">
+						<input type="email" class="form-control" name="email" id="email" placeholder="email@example.com"/>
 					</div>
 					<div class="form-group">
 						<label for="pwd">Hasło:</label>

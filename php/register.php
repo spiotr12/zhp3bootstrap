@@ -1,5 +1,4 @@
 <?php
-
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $password = $_POST['pwd'];
@@ -25,6 +24,9 @@ $passwordEncript = hash('sha256', $salt . $hash);
 //connect to 
 include ('../etc/db_access.php');
 $db_con = mysqli_connect($db_host, $db_username, $db_password, $db_dbname);
+
+// polish characters
+include 'polish_characters.php';
 
 //sanitize username
 //$reg_username = mysqli_real_escape_string($db_con, $reg_username);
