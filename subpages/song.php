@@ -4,7 +4,7 @@ $id = $_GET["id"];
 <section id="" class="container-custom">
 	<!--Recent events-->
 	<div class="container container-content con">
-		<div class="row dark-grey row-custom container-first">
+		<div class="row very-dark-grey row-custom container-first">
 			<div class="col-md-8 col-lg-offset-1 song-single">
 				<?php
 				//collects data from table "events" and sort it by "id" date in descending oreder

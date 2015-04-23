@@ -47,12 +47,18 @@ function isCurrentUserAdmin() {
 	}
 }
 
+// returns if anyone is loged in
 function isAnyoneLogedIn(){
 	if (isset($_SESSION['sess_user_active']) && $_SESSION['sess_user_active'] == true) {
 		return true;
 	} else {
 		return false;
 	}
+}
+
+// returns users name
+function getUserName(){
+	return $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname'];
 }
 
 ?>

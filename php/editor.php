@@ -36,13 +36,14 @@ if ($what == 'song') {
 	}
 } else if ($what == 'event'){
 	// --------EVENT EDITOR--------
-	$header = $header . "songbook";
+	$header = $header . "events";
 	// escape text
 	$title = mysqli_real_escape_string($db_con, $_POST['title']);
-	$happen = mysqli_real_escape_string($db_con, $_POST['happen']);
+	$happen = $_POST['happen'];
 	$created = date('Y-m-d'); // only used in addin gnew event
 	$content = mysqli_real_escape_string($db_con, $_POST['content']);
 	$author = mysqli_real_escape_string($db_con, $_POST['author']);
+	$type = mysqli_real_escape_string($db_con, $_POST['type']);
 	// create query
 	if ($do == 'add') { // if the operation is to add
 		$query = "
@@ -59,8 +60,8 @@ if ($what == 'song') {
 	}
 }
 //---------------------------
-//echo $query;
+echo $query;
 mysqli_query($db_con, $query);
 mysqli_close($db_con);
-header($header);
+//header($header);
 ?>

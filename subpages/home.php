@@ -54,8 +54,8 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 <section id="about_troop" class="container-custom">	
 	<!--About the troop-->
 	<div class="container container-custom">
-		<div class="row dark-grey row-custom">
-			<div class="col-md-6 dark-grey">
+		<div class="row very-dark-grey row-custom">
+			<div class="col-md-6">
 				<h2>Coś niecoś o nas</h2>
 				<p>
 					W czerwcu 2013 roku zostal zalozony Krag Harcerstwa Starszego, zlozony z osob doroslych, ktorych sercu bliska jest idea polskiego harcerstwa na emigracji w Aberdeen. Krag nazywa sie Bractwo Zelaznej Brzozy. 
@@ -139,8 +139,8 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 <section id="contact" class="container-custom">
 	<!--Recent events-->
 	<div class="container container-content">
-		<div class="row dark-grey row-custom">
-			<div class="col-md-5 col-lg-offset-1 dark-grey">
+		<div class="row very-dark-grey row-custom">
+			<div class="col-md-5 col-lg-offset-1">
 				<h2>Skontaktuj się z nami</h2>
 				<h3>Katarzyna Stać</h3>
 				<ul class="contact-list">

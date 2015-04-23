@@ -94,7 +94,7 @@ $resultArray = mysqli_fetch_array($tableData);
 						<tbody>
 							<?php
 							//collects data from table "events" and sort it by "id" date in descending oreder
-							$query = "SELECT * FROM borrow_history WHERE book_id = '$id' ORDER BY date_borrowed ASC";
+							$query = "SELECT * FROM borrow_history, member WHERE member.id = person AND book_id = '$id' ORDER BY date_borrowed ASC";
 							$tableData = mysqli_query($db_con, $query)
 									or die(mysqli_error());
 
@@ -113,7 +113,7 @@ $resultArray = mysqli_fetch_array($tableData);
 									echo "<tr>";
 									echo "	<td>" . $resultArray['date_borrowed'] . "</td>";
 									echo "	<td>" . $resultArray['date_returned'] . "</td>";
-									echo "	<td>" . $resultArray['person'] . "</td>";
+									echo "	<td>" . $resultArray['firstname'] . " " . $resultArray['lastname'] . "</td>";
 									echo "	<td>" . $returned . "</td>";
 									echo "</tr>";
 								} while ($resultArray = mysqli_fetch_array($tableData));

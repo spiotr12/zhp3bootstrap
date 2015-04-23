@@ -11,6 +11,15 @@ body {
 	background: url(../img/background.jpg) no-repeat center center fixed; 
 }
 
+a {
+	color: #72b42d;
+	font-weight: bold;
+}
+
+a:hover{
+	color: #e6b900;
+}
+
 a.avatar{
 	display: block;
 }
@@ -81,8 +90,12 @@ a.avatar{
 	background: url(../img/dark-grey.png) repeat;
 }
 
+.very-dark-grey{
+	background: url(../img/very-dark-grey.png) repeat;
+}
+
 h1, h2, h3, h4, h5, p, label{
-	font-weight: 600;
+	/*font-weight: 600;*/
 	color: white;
 }
 
@@ -118,6 +131,10 @@ footer{
 .summernote-text-editor{
 	background-color: #444;
 	color: white;
+}
+
+.texteditor-custom *{
+	font-weight: normal;
 }
 
 .note-editable{

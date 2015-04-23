@@ -114,7 +114,7 @@
 			} else {
 				?>
 				<div class="col-md-10 col-md-offset-2">
-					<h2>Jesteś zalogowany jako <?php echo $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname']?></h2>
+					<h2>Jesteś zalogowany jako <?php echo getUserName()?></h2>
 					<br/>
 					<p>
 						<a class="page-scroll btn btn-warning" href="index.php?link=profile" role="button">Edytuj profil &raquo;</a>

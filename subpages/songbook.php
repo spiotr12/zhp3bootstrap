@@ -14,8 +14,11 @@
 					</div>-->
 				<p>Tutaj znajdzesz nasze piosenki</p>
 				<p>
-					<a class="page-scroll btn btn-primary btn-lg" href="#songbook-list" role="button">Czytaj &raquo;</a>					
-				</p>
+					<a class="page-scroll btn btn-primary btn-lg" href="#songbook-list" role="button">Czytaj &raquo;</a>	
+					<button class="btn btn-danger">
+						TODO : zamień na tabelkę
+					</button>
+				</p>				
 			</div>
 			<?php
 			if (isAnyoneLogedIn()) {
@@ -62,7 +65,7 @@
 					echo "	<p class='pull-right'>";
 					echo "	<a class='page-scroll btn btn-sm btn-warning' href='index.php?link=songEdit&do=edit&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-pencil'></span> Edytuj</a>";
 					if (isCurrentUserAdmin()) {
-						echo "	<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=songDelete&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-trash'></span> Usuń</a>";
+						echo "	<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=delete&what=song&&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-trash'></span> Usuń</a>";
 					}
 					echo "	</p>";
 					echo "</div>";

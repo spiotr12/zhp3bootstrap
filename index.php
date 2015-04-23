@@ -53,6 +53,9 @@ include './php/scripts.php'; // gets scripts
 
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/summernote.css" rel="stylesheet">
+		<link href="css/jquery-ui.css" rel="stylesheet">
+		<link href="css/jquery-ui.min.css" rel="stylesheet">
+		<link href="css/theme.css" rel="stylesheet">
 
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -176,7 +179,7 @@ include './php/scripts.php'; // gets scripts
 								<!--when user is logged in-->
 								<a class="dropdown-toggle" aria-expanded="false" role="button" data-toggle="dropdown"  href="#">
 									<?php
-									echo $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname'];
+									echo getUserName();
 									?>
 									<span class="caret"></span>
 									<img class="avatar img-circle" src="img/avatars/
@@ -239,33 +242,34 @@ include './php/scripts.php'; // gets scripts
 		switch ($subpage) {
 			case "home" : $directory = './subpages/home.php';
 				break;
-			case "events" : $directory =  './subpages/events.php';
+			case "events" : $directory = './subpages/events.php';
 				break;
-			case "singleEvent" : $directory =  './subpages/event.php';
+			case "singleEvent" : $directory = './subpages/event.php';
 				break;
-			case "library" : $directory =  './subpages/library.php';
+			case "library" : $directory = './subpages/library.php';
 				break;
-			case "book" : $directory =  './subpages/book.php';
+			case "book" : $directory = './subpages/book.php';
 				break;
-			case "songbook" : $directory =  './subpages/songbook.php';
+			case "songbook" : $directory = './subpages/songbook.php';
 				break;
-			case "singleSong" : $directory =  './subpages/song.php';
+			case "singleSong" : $directory = './subpages/song.php';
 				break;
-			case "login" : $directory =  './subpages/login.php';
+			case "login" : $directory = './subpages/login.php';
 				break;
-			case "logout" : $directory =  './subpages/logout.php';
+			case "logout" : $directory = './subpages/logout.php';
 				break;
 //			case "profile" : $directory =  './subpages/profile.php';
 //				break;
-			case "songEdit" : $directory =  './subpages/songEditor.php';
+			case "songEdit" : $directory = './subpages/songEditor.php';
 				break;
-//			case "eventEdit" : $directory =  './subpages/eventEditor.php';
-//				break;
+			case "eventEdit" : $directory = './subpages/eventEditor.php';
+				break;
+			case "delete" : $directory = './subpages/confirmDelete.php';
+				break;
 //			case "adminTools" : $directory =  './subpages/admintools.php';
 //				break;
-
 			// default; if there is no option
-			default : $directory =  './subpages/nopage.php';
+			default : $directory = './subpages/nopage.php';
 				break;
 		}
 		// if there is an option but no directory
@@ -291,7 +295,9 @@ include './php/scripts.php'; // gets scripts
 	</body>
 	<!--standard scripts start-->
 	<!--<script src="js/vendor/jquery-1.11.2.js"></script>-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>-->
+	<script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
 
@@ -308,10 +314,14 @@ include './php/scripts.php'; // gets scripts
 
 	<script>
 		$(document).ready(function () {
+			// text editor
 			$('#summernote').summernote();
 //			$('textarea.note-codable').attr('name', 'editorTextArea');
 //			$('textarea.note-codable').attr('id', 'editorTextArea');
+			// sortable table
 			$('#sorttable').tablesorter();
+			// date picker with date format
+			$('#datepicker').datepicker({dateFormat: 'yy-mm-dd'});
 		});
 	</script>
 	<!--summernote text editor start-->

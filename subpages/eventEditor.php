@@ -20,7 +20,7 @@
 					}
 					?>					
 					<form role="form" name="register" action="./php/editor.php" method="post">
-
+						<!--editor type-->
 						<input type="hidden" name="editorFor" value="event"/>
 						<input type="hidden" name="editorDo" value="<?php echo $do; ?>"/>
 						<?php
@@ -39,20 +39,36 @@
 								?>"/>
 							</div>
 
-							<div class="col-lg-4 form-group">
-								<label for="artist">Artysta:</label>
-								<input type="text" class="form-control" name="artist" id="artist" value="<?php
+							<div class="col-lg-2 form-group">
+								<label for="happen">Data:</label>
+								<input type="text" id="datepicker" class="form-control" name="happen" id="happen" value="<?php
 								if ($do == 'edit') {
-									echo $resultArray['artist'];
+									echo $resultArray['happen'];
 								}
 								?>"/>
 							</div>
 
-							<div class="col-lg-4 form-group">
-								<label for="addedBy">Dodane przez:</label>
-								<input type="text" class="form-control" name="addedBy" id="addedBy"  value="<?php
+							<div class="col-lg-3 form-group">
+								<label for="type">Informacje dla:</label>
+								<select class="form-control" name="type" id="type">
+								<?php
+								$type = "";
 								if ($do == 'edit') {
-									echo $resultArray['addedBy'];
+									$type = $resultArray['type'];
+								}
+								?>
+									<option <?php if ($type == "wszyscy") { ?>selected="selected" <?php } ?>value="wszyscy">Wszyscy</option>
+									<option <?php if ($type == "zuchy") { ?>selected="selected" <?php } ?>value="zuchy">Zuchy</option>
+									<option <?php if ($type == "harcerze") { ?>selected="selected" <?php } ?>value="harcerze">Harcerze</option>
+									<option <?php if ($type == "wedrownicy") { ?>selected="selected" <?php } ?>value="wedrownicy">Wędrownicy</option>
+								</select>
+							</div>
+
+							<div class="col-lg-3 form-group">
+								<label for="addedBy">Dodane przez:</label>
+								<input type="text" class="form-control" name="author" id="author"  value="<?php
+								if ($do == 'edit') {
+									echo $resultArray['author'];
 								} else {
 									echo $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname'];
 								}
@@ -63,10 +79,10 @@
 						<div class="form-group">
 							<label for="summernote">Tekst piosenki:</label>
 							<div class="summernote-text-editor">
-								<textarea id="summernote" name="lyrics"><?php
+								<textarea id="summernote" class="texteditor-custom" name="content"><?php
 									if ($do == 'edit') {
-										echo $resultArray['lyrics'];
-									} 
+										echo $resultArray['content'];
+									}
 //									else {
 //										echo "
 //										<table class='table table-bordered'>

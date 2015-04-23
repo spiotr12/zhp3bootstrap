@@ -63,7 +63,7 @@
 						<div class="form-group">
 							<label for="summernote">Tekst piosenki:</label>
 							<div class="summernote-text-editor">
-								<textarea id="summernote" name="lyrics"><?php
+								<textarea id="summernote" class="texteditor-custom" name="lyrics"><?php
 									if ($do == 'edit') {
 										echo $resultArray['lyrics'];
 									} 

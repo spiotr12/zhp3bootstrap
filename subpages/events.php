@@ -14,7 +14,12 @@
 					</div>
 					</div>-->
 				<p>Tu dowiesz się wszystkiego o naszych wydarzeniach</p>
-				<p><a class="page-scroll btn btn-primary btn-lg" href="#events-list" role="button">Czytaj &raquo;</a></p>
+				<p>
+					<a class="page-scroll btn btn-primary btn-lg" href="#events-list" role="button">Czytaj &raquo;</a>
+					<button class="btn btn-danger">
+						TODO : nie można dodać postu
+					</button>
+				</p>
 			</div>
 			<?php
 			if (isCurrentUserAdmin()) {
@@ -62,8 +67,8 @@
 				if (isCurrentUserAdmin()) {
 					echo "<div class='col-md-4 pull-right'>";
 					echo "	<p class='pull-right'>";
-					echo "	<a class='page-scroll btn btn-sm btn-warning' href='index.php?link=eventEdit&do=edit&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-pencil'></span> Edytuj</a>";
-					echo "	<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=eventDelete&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-trash'></span> Usuń</a>";
+					echo "		<a class='page-scroll btn btn-sm btn-warning' href='index.php?link=eventEdit&do=edit&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-pencil'></span> Edytuj</a>";
+					echo "		<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=delete&what=event&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-trash'></span> Usuń</a>";
 					echo "	</p>";
 					echo "</div>";
 				}
