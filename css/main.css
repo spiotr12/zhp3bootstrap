@@ -42,6 +42,7 @@ a.avatar{
 
 .container-custom{
 	min-height: 100%;
+	
 }
 
 .logo{
@@ -65,6 +66,9 @@ a.avatar{
 	margin-top: 100px;
 }
 
+.container-first{
+	margin-top: 48px;
+}
 /*#recent_events{
 	margin-bottom: 25%;
 }*/
@@ -120,6 +124,36 @@ footer{
 	min-height: 40px;
 }
 
+.book-table{
+	color: white;
+}
+
+.book-link{
+	color: white;
+}
+
+.book-link:hover{
+	color: #57a957;
+}
+
+.book-image{
+	border: 2px solid;
+	border-color: #dcdcdc;
+	border-radius: 15px 5px;
+}
+
+.book-image, .book-infopanel{
+	padding-top: 10px;
+}
+
+.text-large{
+	font-size: 22px;
+}
+
+.text-medium{
+	font-size: 12px;
+}
+
 @media (max-width : 767px) {
 	.pull-nav-right{
 		float: none;
@@ -138,3 +172,55 @@ footer{
 }
 
 
+/* ==========================================================================
+   Table sorting
+   ========================================================================== */
+table.tablesorter {
+/*	font-family:arial;
+	background-color: #CDCDCD;
+	margin:10px 0pt 15px;
+	font-size: 8pt;
+	width: 100%;
+	text-align: left;*/
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	/*background-color: #e6EEEE;*/
+/*	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px;*/
+}
+table.tablesorter thead tr .header {
+	background-image: url(../img/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td {
+/*	color: #3D3D3D;
+	padding: 4px;
+	background-color: #FFF;
+	vertical-align: top;*/
+}
+table.tablesorter tbody tr.odd td {
+	/*background-color:#F0F0F6;*/
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(../img/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(../img/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+	/*background-color: #8dbdd8;*/
+}
+
+/* ==========================================================================
+   Carousel
+   ========================================================================== */
+.carousel .carousel-control {
+	visibility: hidden; 
+}
+
+.carousel:hover .carousel-control { 
+	visibility: visible; 
+}

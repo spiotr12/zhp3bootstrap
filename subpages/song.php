@@ -3,8 +3,8 @@ $id = $_GET["id"];
 ?>
 <section id="" class="container-custom">
 	<!--Recent events-->
-	<div class="container container-content song-single-container">
-		<div class="row dark-grey row-custom">
+	<div class="container container-content con">
+		<div class="row dark-grey row-custom container-first">
 			<div class="col-md-8 col-lg-offset-1 song-single">
 				<?php
 				//collects data from table "events" and sort it by "id" date in descending oreder
@@ -14,10 +14,10 @@ $id = $_GET["id"];
 
 				//puts the data from "events" into an array
 				$resultArray = mysqli_fetch_array($tableData);
-				do {
+//				do {
 					echo "<h2>" . $resultArray['title'] . "</h2>";
 					echo "<p>" . $resultArray['lyrics'] . "</p>";
-				} while ($resultArray = mysqli_fetch_array($tableData))
+//				} while ($resultArray = mysqli_fetch_array($tableData))
 				?>
 			</div>
 		</div>

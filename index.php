@@ -122,7 +122,7 @@ include './php/scripts.php'; // gets scripts
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li>
-									<a class="page-scroll" href="<?php isInParentTab($subpage, "books") ?>#books">Książki</a>
+									<a class="page-scroll" href="<?php isInParentTab($subpage, "library") ?>#library">Książki</a>
 								</li>
 								<li class="disabled">
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "documents") ?>#documents">Dokumenty</a>
@@ -170,7 +170,7 @@ include './php/scripts.php'; // gets scripts
 					<!--<div class="navbar-collapse collapse">-->
 					<ul class="nav navbar-nav pull-nav-right">
 						<?php
-						if (isset($_SESSION['sess_user_active']) && $_SESSION['sess_user_active'] == true) {
+						if (isAnyoneLogedIn() == true) {
 							?>
 							<li class="dropdown">
 								<!--when user is logged in-->
@@ -195,6 +195,13 @@ include './php/scripts.php'; // gets scripts
 									<li>
 										<a href="index.php?link=logout">Wyloguj</a>
 									</li>
+									<?php
+									if (isCurrentUserAdmin()) {
+										echo "<li>";
+										echo "	<a href='index.php?link=adminTools'>Narzędzia Admina</a>";
+										echo "</li>";
+									}
+									?>
 								</ul>
 							</li>
 							<li>
@@ -228,31 +235,44 @@ include './php/scripts.php'; // gets scripts
 		</nav>
 
 		<?php
+		$directory = "";
 		switch ($subpage) {
-			case "home" : include './subpages/home.php';
+			case "home" : $directory = './subpages/home.php';
 				break;
-			case "events" : include './subpages/events.php';
+			case "events" : $directory =  './subpages/events.php';
 				break;
-			case "singleEvent" : include './subpages/event.php';
+			case "singleEvent" : $directory =  './subpages/event.php';
 				break;
-			case "books" : include './subpages/books.php';
+			case "library" : $directory =  './subpages/library.php';
 				break;
-			case "songbook" : include './subpages/songbook.php';
+			case "book" : $directory =  './subpages/book.php';
 				break;
-			case "singleSong" : include './subpages/song.php';
+			case "songbook" : $directory =  './subpages/songbook.php';
 				break;
-			case "login" : include './subpages/login.php';
+			case "singleSong" : $directory =  './subpages/song.php';
 				break;
-			case "logout" : include './subpages/logout.php';
+			case "login" : $directory =  './subpages/login.php';
 				break;
-			case "profile" : include './subpages/profile.php';
+			case "logout" : $directory =  './subpages/logout.php';
 				break;
-			case "songEdit" : include './subpages/songEditor.php';
+//			case "profile" : $directory =  './subpages/profile.php';
+//				break;
+			case "songEdit" : $directory =  './subpages/songEditor.php';
 				break;
+//			case "eventEdit" : $directory =  './subpages/eventEditor.php';
+//				break;
+//			case "adminTools" : $directory =  './subpages/admintools.php';
+//				break;
 
-			//default
-			default : include './subpages/home.php';
+			// default; if there is no option
+			default : $directory =  './subpages/nopage.php';
 				break;
+		}
+		// if there is an option but no directory
+		if (file_exists($directory)) {
+			include $directory;
+		} else {
+			include './subpages/nopage.php';
 		}
 		?>
 
@@ -262,7 +282,7 @@ include './php/scripts.php'; // gets scripts
 			<div class="row dark-grey row-custom">
 				<footer>
 					<p>
-						Create by KnowIdea team
+						Create by KnowIdea team (Piotr Starzec)
 					</p>
 				</footer>
 			</div>
@@ -270,15 +290,15 @@ include './php/scripts.php'; // gets scripts
 		<!--</section>-->
 	</body>
 	<!--standard scripts start-->
-	
 	<!--<script src="js/vendor/jquery-1.11.2.js"></script>-->
-	<script src="//code.jquery.com/jquery-1.11.2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
 
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
 
 	<script src="js/vendor/bootstrap.min.js"></script>
 	<script src="js/vendor/jquery.easing.min.js"></script>
 	<script src="js/vendor/scrolling-nav.js"></script>
+	<script src="js/vendor/jquery.tablesorter.js"></script>
 
 	<script src="js/main.js"></script>
 	<!--standard scripts end-->
@@ -291,6 +311,7 @@ include './php/scripts.php'; // gets scripts
 			$('#summernote').summernote();
 //			$('textarea.note-codable').attr('name', 'editorTextArea');
 //			$('textarea.note-codable').attr('id', 'editorTextArea');
+			$('#sorttable').tablesorter();
 		});
 	</script>
 	<!--summernote text editor start-->

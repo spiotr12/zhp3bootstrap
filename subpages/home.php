@@ -55,7 +55,7 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 	<!--About the troop-->
 	<div class="container container-custom">
 		<div class="row dark-grey row-custom">
-			<div class="col-md-6">
+			<div class="col-md-6 dark-grey">
 				<h2>Coś niecoś o nas</h2>
 				<p>
 					W czerwcu 2013 roku zostal zalozony Krag Harcerstwa Starszego, zlozony z osob doroslych, ktorych sercu bliska jest idea polskiego harcerstwa na emigracji w Aberdeen. Krag nazywa sie Bractwo Zelaznej Brzozy. 
@@ -80,8 +80,8 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 				<h2>Zdjęcia</h2>
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					<?php
-					$directory = "./img/slideshow";
-					$images = getFilesFromFolder($directory);
+					$caruselImagesDirectory = "./img/slideshow";
+					$images = getFilesFromFolder($caruselImagesDirectory);
 
 					// Indicators
 					echo "<ol class='carousel-indicators'>\n
@@ -140,7 +140,7 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 	<!--Recent events-->
 	<div class="container container-content">
 		<div class="row dark-grey row-custom">
-			<div class="col-md-12 col-lg-offset-1">
+			<div class="col-md-5 col-lg-offset-1 dark-grey">
 				<h2>Skontaktuj się z nami</h2>
 				<h3>Katarzyna Stać</h3>
 				<ul class="contact-list">
@@ -149,13 +149,18 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 				</ul>
 				<h3>Krzysztof Orchowski</h3>
 				<ul class="contact-list">
-					<li>Funkcja: &ensp;Kierowni Kręgu Harcerstwa Starszego</li>
+					<li>Funkcja: &ensp;Kierownik Kręgu Harcerstwa Starszego</li>
 					<li>Email: &ensp; <a class="label label-warning" href="mailto:k.orchowski.08@aberdeen.ac.uk">k.orchowski.08@aberdeen.ac.uk</a></li>
 				</ul>
 				<h3>Piotr Starzec</h3>
 				<ul class="contact-list">
 					<li>Funkcja: &ensp;Skarbnik oraz Administrator strony</li>
 					<li>Email: &ensp; <a class="label label-warning" href="mailto:starzec.piotr.12@gmail.com">starzec.piotr.12@gmail.com</a></li>
+				</ul>
+				<h3>Patrycja Zawilińska</h3>
+				<ul class="contact-list">
+					<li>Funkcja: &ensp;Przyboczna gromady zuchowej</li>
+					<li>Email: &ensp; <a class="label label-warning" href="mailto:pati1133@wp.pl">pati1133@wp.pl</a></li>
 				</ul>
 			</div>
 		</div>

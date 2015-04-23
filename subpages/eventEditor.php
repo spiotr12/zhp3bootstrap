@@ -5,14 +5,14 @@
 			<div class="col-md-9 col-lg-offset-1 song-single">
 				<?php
 				$do = $_GET['do'];
-				if (isAnyoneLogedIn() == true) {
+				if (isCurrentUserAdmin() == true) {
 					$resultArray;
 					if ($do == 'add') {
-						echo "<h2>Dodaj nową piosenkę</h2>";
+						echo "<h2>Dodaj nowe wydarzenie</h2>";
 					} else if ($do == 'edit') {
-						echo "<h2>Edytuj piosenkę</h2>";
+						echo "<h2>Edytuj wydarzenie</h2>";
 						//collects data about this ID item
-						$query = "SELECT * FROM songbook WHERE id=" . $_GET['id'];
+						$query = "SELECT * FROM events WHERE id=" . $_GET['id'];
 						$tableData = mysqli_query($db_con, $query)
 								or die(mysqli_error());
 						//puts the data from "events" into an array
@@ -21,7 +21,7 @@
 					?>					
 					<form role="form" name="register" action="./php/editor.php" method="post">
 
-						<input type="hidden" name="editorFor" value="song"/>
+						<input type="hidden" name="editorFor" value="event"/>
 						<input type="hidden" name="editorDo" value="<?php echo $do; ?>"/>
 						<?php
 						if ($do == 'edit') {
@@ -87,7 +87,7 @@
 							?>
 							<button type="submit" class="btn btn-lg btn-success center-block">
 								<span class="glyphicon glyphicon-plus"></span>
-								Dodaj piosenkę 
+								Dodaj wydarzenie 
 							</button>
 							<?php
 						} else if ($do == 'edit') {

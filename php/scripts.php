@@ -37,11 +37,19 @@ function isCurrentUserAdmin() {
 		// fetch array with data
 		$userData = mysqli_fetch_array($result, MYSQL_ASSOC);
 
-		if ($userData['admin'] == false) {
+		if ($userData['admin'] == true) {
 			return true;
 		} else {
 			return false;
 		}
+	} else {
+		return false;
+	}
+}
+
+function isAnyoneLogedIn(){
+	if (isset($_SESSION['sess_user_active']) && $_SESSION['sess_user_active'] == true) {
+		return true;
 	} else {
 		return false;
 	}

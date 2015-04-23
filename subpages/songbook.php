@@ -1,9 +1,9 @@
 <section id="songbook">
 	<div class="jumbotron">
 		<div class="container dark-grey">
-			<div class="col-lg-5 col-lg-offset-1"
-				 <span id="title-block">
-					 <!--<img id="lilijnka" src="img/logo_medium.png"/>-->
+			<div class="col-lg-6 col-lg-offset-1">
+				<span id="title-block">
+					<!--<img id="lilijnka" src="img/logo_medium.png"/>-->
 					<h1 id="h1-main-title">Nasz Śpiewnik</h1>
 				</span>
 
@@ -18,12 +18,12 @@
 				</p>
 			</div>
 			<?php
-			if (isCurrentUserAdmin()) {
+			if (isAnyoneLogedIn()) {
 				?>
-				<div class="col-lg-3 col-lg-offset-1">
+				<div class="col-lg-4">
 					<p>
-					<h2>Narzędzia administratora</h2>
-					<a class="page-scroll btn btn-success btn-lg" href="index.php?link=songEdit&do=add" role="button">Dodaj nową piosenkę &raquo;</a>
+					<h2>Dodaj nową piosenkę</h2>
+					<a class="page-scroll btn btn-success btn-lg" href="index.php?link=songEdit&do=add" role="button"><span class="glyphicon glyphicon-plus"></span> Dodaj</a>
 					</p>
 				</div>
 				<?php
@@ -57,11 +57,13 @@
 				echo "			<p>autor: " . $resultArray['artist'] . " ";
 				echo "			<a class='page-scroll btn btn-primary btn-xs' href='index.php?link=singleSong&id=" . $resultArray['id'] . "' role='button'>Śpiewaj</a></p>";
 				echo "		</div>";
-				if (isCurrentUserAdmin()) {
+				if (isAnyoneLogedIn()) {
 					echo "<div class='col-md-4 '>";
-					echo "	<p>";
+					echo "	<p class='pull-right'>";
 					echo "	<a class='page-scroll btn btn-sm btn-warning' href='index.php?link=songEdit&do=edit&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-pencil'></span> Edytuj</a>";
-					echo "	<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=songDelete&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-trash'></span> Usuń</a>";
+					if (isCurrentUserAdmin()) {
+						echo "	<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=songDelete&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-trash'></span> Usuń</a>";
+					}
 					echo "	</p>";
 					echo "</div>";
 				}
