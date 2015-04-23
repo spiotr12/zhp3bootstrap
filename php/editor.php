@@ -63,5 +63,5 @@ if ($what == 'song') {
 echo $query;
 mysqli_query($db_con, $query);
 mysqli_close($db_con);
-//header($header);
+header($header);
 ?>
