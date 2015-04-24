@@ -61,7 +61,7 @@ if ($what == 'song') {
 	}
 }
 //---------------------------
-//echo $query;
+echo $query;
 mysqli_query($db_con, $query);
 // check error
 //if (!$check1_res) {
@@ -69,5 +69,5 @@ mysqli_query($db_con, $query);
 //	exit();
 //}
 mysqli_close($db_con);
-header($header);
+//header($header);
 ?>
