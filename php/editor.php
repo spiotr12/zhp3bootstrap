@@ -34,7 +34,7 @@ if ($what == 'song') {
 			WHERE id = '$id';
 		";
 	}
-} else if ($what == 'event'){
+} else if ($what == 'event') {
 	// --------EVENT EDITOR--------
 	$header = $header . "events";
 	// escape text
@@ -48,7 +48,7 @@ if ($what == 'song') {
 	if ($do == 'add') { // if the operation is to add
 		$query = "
 			INSERT INTO events ( title, happen, created, content, author ) 
-			VALUES ( '$title', '$happen', '$created', $content', '$author' )
+			VALUES ( '$title', '$happen', '$created', '$content', '$author' )
 		";
 	} else if ($do == 'edit') { // if operiation is to edit
 		$id = $_POST['id'];
@@ -60,8 +60,13 @@ if ($what == 'song') {
 	}
 }
 //---------------------------
-echo $query;
+//echo $query;
 mysqli_query($db_con, $query);
+// check error
+//if (!$check1_res) {
+//	printf("Error: %s\n", mysqli_error($db_con));
+//	exit();
+//}
 mysqli_close($db_con);
 header($header);
 ?>

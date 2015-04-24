@@ -48,7 +48,7 @@ function isCurrentUserAdmin() {
 }
 
 // returns if anyone is loged in
-function isAnyoneLogedIn(){
+function isAnyoneLogedIn() {
 	if (isset($_SESSION['sess_user_active']) && $_SESSION['sess_user_active'] == true) {
 		return true;
 	} else {
@@ -57,7 +57,7 @@ function isAnyoneLogedIn(){
 }
 
 // returns users name
-function getUserName(){
+function getUserName() {
 	return $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname'];
 }
 
