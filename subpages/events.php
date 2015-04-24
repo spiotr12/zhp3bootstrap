@@ -16,9 +16,6 @@
 				<p>Tu dowiesz się wszystkiego o naszych wydarzeniach</p>
 				<p>
 					<a class="page-scroll btn btn-primary btn-lg" href="#events-list" role="button">Czytaj &raquo;</a>
-					<button class="btn btn-danger">
-						TODO : nie można dodać postu
-					</button>
 				</p>
 			</div>
 			<?php
