@@ -47,26 +47,26 @@ if ($what == 'song') {
 	// create query
 	if ($do == 'add') { // if the operation is to add
 		$query = "
-			INSERT INTO events ( title, happen, created, content, author ) 
-			VALUES ( '$title', '$happen', '$created', '$content', '$author' )
+			INSERT INTO events ( title, happen, created, content, author, type ) 
+			VALUES ( '$title', '$happen', '$created', '$content', '$author', $type)
 		";
 	} else if ($do == 'edit') { // if operiation is to edit
 		$id = $_POST['id'];
 		$query = "
 			UPDATE events
-			SET title = '$title', happen = '$happen', content = '$content', author = '$author'
+			SET title = '$title', happen = '$happen', content = '$content', author = '$author', type = $type
 			WHERE id = '$id';
 		";
 	}
 }
 //---------------------------
-//echo $query;
+echo $query;
 mysqli_query($db_con, $query);
 // check error
-//if (!$check1_res) {
-//	printf("Error: %s\n", mysqli_error($db_con));
-//	exit();
-//}
+if (!$check1_res) {
+	printf("Error: %s\n", mysqli_error($db_con));
+	exit();
+}
 mysqli_close($db_con);
-header($header);
+//header($header);
 ?>

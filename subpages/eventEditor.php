@@ -57,10 +57,10 @@
 									$type = $resultArray['type'];
 								}
 								?>
-									<option <?php if ($type == "wszyscy") { ?>selected="selected" <?php } ?>value="wszyscy">Wszyscy</option>
-									<option <?php if ($type == "zuchy") { ?>selected="selected" <?php } ?>value="zuchy">Zuchy</option>
-									<option <?php if ($type == "harcerze") { ?>selected="selected" <?php } ?>value="harcerze">Harcerze</option>
-									<option <?php if ($type == "wedrownicy") { ?>selected="selected" <?php } ?>value="wedrownicy">Wędrownicy</option>
+									<option <?php if ($type == 0) { ?>selected="selected" <?php } ?>value="0">Wszyscy</option>
+									<option <?php if ($type == 1) { ?>selected="selected" <?php } ?>value="1">Zuchy</option>
+									<option <?php if ($type == 2) { ?>selected="selected" <?php } ?>value="2">Harcerze</option>
+									<option <?php if ($type == 3) { ?>selected="selected" <?php } ?>value="3">Wędrownicy</option>
 								</select>
 							</div>
 
