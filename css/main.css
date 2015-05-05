@@ -70,6 +70,13 @@ a.avatar{
 	background: #eeeeee;
 }
 
+.page-scroll-100{
+	position: absolute;
+	display: block;
+	margin-top: -100px;
+	padding-top: 100px;
+}
+
 .row-custom{
 	padding-bottom: 20px;
 	margin-top: 100px;
@@ -92,6 +99,14 @@ a.avatar{
 
 .very-dark-grey{
 	background: url(../img/very-dark-grey.png) repeat;
+}
+
+.border-round-5{
+	border-radius: 5px;
+}
+
+.padding-top-5{
+	padding-top: 5px;
 }
 
 h1, h2, h3, h4, h5, p, label{
@@ -171,6 +186,13 @@ footer{
 	font-size: 12px;
 }
 
+.songbook-song-link{
+	color: white;
+}
+
+.song-lyrics *{
+	color: white;
+}
 @media (max-width : 767px) {
 	.pull-nav-right{
 		float: none;

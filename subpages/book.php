@@ -9,6 +9,7 @@ $tableData = mysqli_query($db_con, $query)
 //puts the data from "events" into an array
 $resultArray = mysqli_fetch_array($tableData);
 ?>
+<title><?php echo $resultArray['title']; ?></title>
 <section id="" class="container-custom">
 	<!--Recent events-->
 	<div class="container container-content">

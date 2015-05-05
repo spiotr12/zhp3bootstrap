@@ -1,3 +1,4 @@
+<title>Strona nie istnieje</title>
 <section id="login" class="container-custom">
 	<!--Recent events-->
 	<div class="container container-content">

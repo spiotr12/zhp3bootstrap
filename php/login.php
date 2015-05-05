@@ -25,11 +25,11 @@ $userData = mysqli_fetch_array($result, MYSQL_ASSOC);
 $hash = hash('sha256', $userData['salt'] . hash('sha256', $password));
 
 if ($hash != $userData['password']) {
-	echo $hash;
-	echo "<br/>";
-	echo $userData['password'];
+//	echo $hash;
+//	echo "<br/>";
+//	echo $userData['password'];
 	// Incorrect password. So, redirect to login_form again.
-//	header('Location: ../index.php?link=login&error=wrongpwd#login');
+	header('Location: ../index.php?link=login&error=wrongpwd#login');
 } else {
 	// Redirect to home page after successful login.
 	session_regenerate_id();

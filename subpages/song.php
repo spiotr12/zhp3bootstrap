@@ -5,7 +5,7 @@ $id = $_GET["id"];
 	<!--Recent events-->
 	<div class="container container-content con">
 		<div class="row very-dark-grey row-custom container-first">
-			<div class="col-md-8 col-lg-offset-1 song-single">
+			<div class="col-md-8 col-lg-offset-1 song-single song-lyrics">
 				<?php
 				//collects data from table "events" and sort it by "id" date in descending oreder
 				$query = "SELECT * FROM songbook WHERE id = '$id'";
@@ -15,6 +15,7 @@ $id = $_GET["id"];
 				//puts the data from "events" into an array
 				$resultArray = mysqli_fetch_array($tableData);
 //				do {
+					echo "<title>" . $resultArray['title'] . "</title>";
 					echo "<h2>" . $resultArray['title'] . "</h2>";
 					echo "<p>" . $resultArray['lyrics'] . "</p>";
 //				} while ($resultArray = mysqli_fetch_array($tableData))

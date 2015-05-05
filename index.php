@@ -37,7 +37,6 @@ include './php/scripts.php'; // gets scripts
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -156,6 +155,9 @@ include './php/scripts.php'; // gets scripts
 								<li class="divider"></li>
 								<li class="dropdown-header">
 									Współpraca
+								</li>
+								<li>
+									<a target="_blank" href="http://www.aberdeen.edu.pl/">Polska Szkoła</a>
 								</li>
 								<li>
 									<a target="_blank" href="http://www.pccaberdeen.co.uk/">Polish Catholic Community</a>
@@ -318,10 +320,17 @@ include './php/scripts.php'; // gets scripts
 			$('#summernote').summernote();
 //			$('textarea.note-codable').attr('name', 'editorTextArea');
 //			$('textarea.note-codable').attr('id', 'editorTextArea');
+//			
 			// sortable table
 			$('#sorttable').tablesorter();
+			
 			// date picker with date format
 			$('#datepicker').datepicker({dateFormat: 'yy-mm-dd'});
+			
+			//editor author edit button
+			$('#changeEditor').click(function(){
+				$('#author').prop('readonly', false);
+			})
 		});
 	</script>
 	<!--summernote text editor start-->

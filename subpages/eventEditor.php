@@ -1,8 +1,9 @@
+<title>Edytor wydarzeń</title>
 <section id="add-song" class="container-custom">
 	<!--Recent events-->
 	<div class="container container-content song-single-container">
 		<div class="row dark-grey row-custom container-first">
-			<div class="col-md-9 col-lg-offset-1 song-single">
+			<div class="col-md-10 col-md-offset-1 song-single">
 				<?php
 				$do = $_GET['do'];
 				if (isCurrentUserAdmin() == true) {
@@ -32,7 +33,7 @@
 						<div class="row">
 							<div class="col-lg-4 form-group">
 								<label for="title">Tytuł:</label>
-								<input type="text" class="form-control" name="title" id="title" value="<?php
+								<input type="text" class="form-control" required name="title" id="title" value="<?php
 								if ($do == 'edit') {
 									echo $resultArray['title'];
 								}
@@ -41,7 +42,7 @@
 
 							<div class="col-lg-2 form-group">
 								<label for="happen">Data:</label>
-								<input type="text" id="datepicker" class="form-control" name="happen" id="happen" value="<?php
+								<input type="text" id="datepicker" class="form-control" required name="happen" id="happen" value="<?php
 								if ($do == 'edit') {
 									echo $resultArray['happen'];
 								}
@@ -51,12 +52,12 @@
 							<div class="col-lg-3 form-group">
 								<label for="type">Informacje dla:</label>
 								<select class="form-control" name="type" id="type">
-								<?php
-								$type = "";
-								if ($do == 'edit') {
-									$type = $resultArray['type'];
-								}
-								?>
+									<?php
+									$type = "";
+									if ($do == 'edit') {
+										$type = $resultArray['type'];
+									}
+									?>
 									<option <?php if ($type == 0) { ?>selected="selected" <?php } ?>value="0">Wszyscy</option>
 									<option <?php if ($type == 1) { ?>selected="selected" <?php } ?>value="1">Zuchy</option>
 									<option <?php if ($type == 2) { ?>selected="selected" <?php } ?>value="2">Harcerze</option>
@@ -66,13 +67,18 @@
 
 							<div class="col-lg-3 form-group">
 								<label for="addedBy">Dodane przez:</label>
-								<input type="text" class="form-control" name="author" id="author"  value="<?php
-								if ($do == 'edit') {
-									echo $resultArray['author'];
-								} else {
-									echo $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname'];
-								}
-								?>"/>
+								<div class="input-group">
+									<input type="text" class="form-control" required readonly name="author" id="author"  value="<?php
+									if ($do == 'edit') {
+										echo $resultArray['author'];
+									} else {
+										echo $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname'];
+									}
+									?>"/>
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button" id='changeEditor'>Zmień</button>
+									</span>
+								</div>
 							</div>
 						</div>
 
@@ -83,38 +89,31 @@
 									if ($do == 'edit') {
 										echo $resultArray['content'];
 									}
-//									else {
-//										echo "
-//										<table class='table table-bordered'>
-//											<tbody>
-//											<tr>
-//											<td><br></td>
-//										<td><br></td>
-//										</tr>
-//										</tbody>
-//										</table>
-//										";
-//									}
 									?></textarea>
 							</div>
-						</div>						
-						<?php
-						if ($do == 'add') {
-							?>
-							<button type="submit" class="btn btn-lg btn-success center-block">
-								<span class="glyphicon glyphicon-plus"></span>
-								Dodaj wydarzenie 
+						</div>				
+						<p class="text-center">
+							<button type="submit" class="btn btn-lg btn-success">
+								<?php
+								if ($do == 'add') {
+									?>
+									<span class="glyphicon glyphicon-plus"></span>
+									&nbsp;Dodaj wydarzenie 												
+									<?php
+								} else if ($do == 'edit') {
+									?>
+									<span class="glyphicon glyphicon-floppy-disk"></span>
+									&nbsp;Zapisz zmiany 
+									<?php
+								}
+								?>
+							</button>	
+							lub 
+							<button type="button" class="btn btn-lg btn-danger"  onclick="history.back()">
+								<span class="glyphicon glyphicon-trash"></span>
+								&nbsp;Anuluj 
 							</button>
-							<?php
-						} else if ($do == 'edit') {
-							?>
-							<button type="submit" class="btn btn-lg btn-success center-block">
-								<span class="glyphicon glyphicon-pencil"></span>
-								Zapisz zmiany 
-							</button>
-							<?php
-						}
-						?>
+						</p>
 					</form>
 					<?php
 				} else {

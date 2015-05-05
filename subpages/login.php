@@ -1,3 +1,4 @@
+<title>Zaloguj</title>
 <section id="login" class="container-custom">
 	<!--Recent events-->
 	<div class="container container-content">
@@ -12,6 +13,19 @@
 							<label class="label label-danger">
 								<?php
 								echo "Użytkownik nie istnieje";
+								?>
+							</label>
+						</h3>
+					</div>
+					<?php
+				}
+				if (!empty($_GET['error']) && $_GET['error'] == 'wrongpwd') {
+					?>
+					<div class="col-md-10 col-lg-offset-2">
+						<h3>
+							<label class="label label-danger">
+								<?php
+								echo "Złe hasło";
 								?>
 							</label>
 						</h3>

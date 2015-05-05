@@ -1,3 +1,4 @@
+<title>Biblioteka</title>
 <section id="songbook">
 	<div class="jumbotron">
 		<div class="container dark-grey">
@@ -69,8 +70,3 @@
 		</div>
 	</div>
 </section>
-<script>
-	$(document).ready(function () {
-
-	});
-</script>

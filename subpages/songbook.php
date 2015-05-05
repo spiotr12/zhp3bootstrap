@@ -1,3 +1,4 @@
+<title>Spiewnik</title>
 <section id="songbook">
 	<div class="jumbotron">
 		<div class="container dark-grey">
@@ -15,9 +16,6 @@
 				<p>Tutaj znajdzesz nasze piosenki</p>
 				<p>
 					<a class="page-scroll btn btn-primary btn-lg" href="#songbook-list" role="button">Czytaj &raquo;</a>	
-					<button class="btn btn-danger">
-						TODO : zamień na tabelkę
-					</button>
 				</p>				
 			</div>
 			<?php
@@ -39,43 +37,86 @@
 	<!--Recent events-->
 	<div class="container">
 		<div class="row dark-grey row-custom">
-			<?php
-			//collects data from table "events" and sort it by "id" date in descending oreder
-			$query = "SELECT * FROM songbook ORDER BY title ASC";
-			$tableData = mysqli_query($db_con, $query)
-					or die(mysqli_error());
-
-			//puts the data from "events" into an array
-			$resultArray = mysqli_fetch_array($tableData);
-			$count = 0;
-			do {
-				// get content
-				echo "<div id='" . $resultArray['id'] . "'class='col-md-6 col-lg-offset-2 song-container ";
-				if ($count % 2 != 0) {
-					echo "dark-grey";
-				}
-				echo "'>";
-				echo "	<h3>" . $resultArray['title'] . "</h3>";
-				echo "		<div class='col-md-8'>";
-				echo "			<p>autor: " . $resultArray['artist'] . " ";
-				echo "			<a class='page-scroll btn btn-primary btn-xs' href='index.php?link=singleSong&id=" . $resultArray['id'] . "' role='button'>Śpiewaj</a></p>";
-				echo "		</div>";
-				if (isAnyoneLogedIn()) {
-					echo "<div class='col-md-4 '>";
-					echo "	<p class='pull-right'>";
-					echo "	<a class='page-scroll btn btn-sm btn-warning' href='index.php?link=songEdit&do=edit&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-pencil'></span> Edytuj</a>";
-					if (isCurrentUserAdmin()) {
-						echo "	<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=delete&what=song&&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-trash'></span> Usuń</a>";
+			<div class="col-md-10 col-md-offset-1">
+				<table id="sorttable" class="book-table table tablesorter dark-grey">
+					<thead>
+					<th>Tytuł</th>
+					<th>Artysta</th>
+					<th>Garunek</th>
+					<?php
+					if (isAnyoneLogedIn()) {
+						echo "<th></th>";
 					}
-					echo "	</p>";
-					echo "</div>";
-				}
-				echo "</div>";
+					?>
+					</thead>
+					<tbody>
+						<?php
+						//collects data from table "events" and sort it by "id" date in descending oreder
+						$query = "SELECT * FROM songbook ORDER BY title ASC";
+						$tableData = mysqli_query($db_con, $query)
+								or die(mysqli_error());
 
-
-				$count++;
-			} while ($resultArray = mysqli_fetch_array($tableData))
-			?>
+						//puts the data from "events" into an array
+						$resultArray = mysqli_fetch_array($tableData);
+						$count = 0;
+						do {
+							?>
+							<tr>
+								<td class='col-md-5'>
+									<a class="songbook-song-link" href="index.php?link=singleSong&id=<?php echo $resultArray['id']; ?>" role='button'>
+										<?php echo $resultArray['title']; ?>
+									</a>									
+								</td>
+								<td class='col-md-3'>
+									<?php echo $resultArray['artist']; ?>
+								</td>
+								<td class='col-md-2'>
+									<?php echo $resultArray['genre']; ?>
+								</td>
+								<?php
+								if (isAnyoneLogedIn()) {
+									echo "<td class='text-center col-md-2'>";
+									echo "	<a class='page-scroll btn btn-sm btn-warning' href='index.php?link=songEdit&do=edit&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-pencil'></span> Edytuj</a>";
+									if (isCurrentUserAdmin()) {
+										echo "	<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=delete&what=song&&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-trash'></span> Usuń";
+									}
+									echo "</td>";
+								}
+								?>
+								<?php
+//				// get content
+//				echo "<div id='" . $resultArray['id'] . "'class='col-md-6 col-lg-offset-2 song-container ";
+//				if ($count % 2 != 0) {
+//					echo "dark-grey";
+//				}
+//				echo "'>";
+//				echo "	<h3>" . $resultArray['title'] . "</h3>";
+//				echo "		<div class='col-md-8'>";
+//				echo "			<p>autor: " . $resultArray['artist'] . " ";
+//				echo "			<a class='page-scroll btn btn-primary btn-xs' href='index.php?link=singleSong&id=" . $resultArray['id'] . "' role='button'>Śpiewaj</a></p>";
+//				echo "		</div>";
+//				if (isAnyoneLogedIn()) {
+//					echo "<div class='col-md-4 '>";
+//					echo "	<p c<a class='page-scroll btn btn-sm btn-warning' href='index.php?link=songEdit&do=edit&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-pencil'></span> Edytuj</a>";
+//					if (isCurrentUserAdmin()) {
+//						echo "	<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=delete&what=song&&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphilass='pull-right'>";
+//					echo "	con-trash'></span> Usuń</a>";
+//					}
+//					echo "	</p>";
+//					echo "</div>";
+//				}
+//				echo "</div>";
+//
+//
+//				$count++;
+								?>
+							</tr>
+							<?php
+						} while ($resultArray = mysqli_fetch_array($tableData))
+						?>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 </section>

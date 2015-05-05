@@ -10,6 +10,7 @@ $_SESSION['sess_lastname'] = null;
 $_SESSION['sess_email'] = null;
 session_destroy();
 ?>
+<title>Wylogowano</title>
 <section id="login" class="container-custom">
 	<!--Recent events-->
 	<div class="container container-content">

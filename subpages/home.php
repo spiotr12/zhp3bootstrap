@@ -18,7 +18,7 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 	<?php
 }
 ?>
-
+<title>ZHP Aberdeen</title>
 <section id="home" class="container-custom">
 	<div class="jumbotron .jumbotron-custom">
 		<div class="container dark-grey jumbotron-container-container">
@@ -57,24 +57,13 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 		<div class="row very-dark-grey row-custom">
 			<div class="col-md-6">
 				<h2>Coś niecoś o nas</h2>
-				<p>
-					W czerwcu 2013 roku zostal zalozony Krag Harcerstwa Starszego, zlozony z osob doroslych, ktorych sercu bliska jest idea polskiego harcerstwa na emigracji w Aberdeen. Krag nazywa sie Bractwo Zelaznej Brzozy. 
-				</p>
-				<p>	
-					W 2014r. czlonkowie kregu odbyli Kurs Agricola, prowadzony przez instruktorke ZHP, Katrzyne Stec. W 2015 r. powstala pierwsza Gromada Zuchowa ZHP w Aberdeen. W Styczniu 2015 jeden z kursantow kursu Agricola, Marcin Bednarz rozpoczal owocna prace nad powolaniem druzyny wedrowniczej w Glasgow, czego skutkiem jest powstanie ZHP Glasgow. 
-				</p>
-				<p>	
-					Obecnie zbiorki zuchowe (dzieci w wieku 7-11/12 lat) odbywaja sie od 18-19.30 w Grammar School na Skene Street w ramach polskiej szkoly Sobotniej. 
-				</p>
-				<p>	
-					Krag Harcerstwa Starszego w marcu 2015 r. zamknal swoj okres probny i otrzymal nazwe 'Bractwo Zelaznej Brzozy'. Dorosli czlonkowie wspomagaja gromade zuchowa materialnie oraz podejmuja starania nad tworzeniem kolejnych druzyn harcerskich i patroli wedrowniczych. Wspolpracujemy rowniez z ZHP Edynburg i wspomagamy powstawanie nowych osrodkow ZHP w Szkocji w porozumieniu z Wielkobrytyjska Choragwia Harcerzy i Wielkobrytyjska Choragwia Harcerek ZHP.
-				</p>
-				<p>
-					Oprocz pracy z dziecmi, mamy szeroka oferte dla mlodziezy, od wedrowek po zajecia survivalowe, obronne w oparciu o najlepsze tradycje polskiej emigracji w Wielkiej Brytanii.
-				</p>
-				<p>
-					Wszystkich ktorym bliska jest idea polskiego harcerstwa w Aberdeen zapraszamy do kontaktu na wskazane ponizej adresy. Czuwaj!
-				</p>
+				<?php
+				$aboutUs = file_get_contents('doc/aboutUs.txt');
+				$array = explode(PHP_EOL, $aboutUs);
+				foreach ($array as $p) {
+					echo "<p>" . $p . "</p>";
+				}
+				?>
 			</div>
 			<div class="col-md-6">
 				<h2>Zdjęcia</h2>
@@ -115,6 +104,31 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 						<span class="sr-only">Następny</span>
 					</a>
 				</div>
+				<span id='contact' class="page-scroll-100">
+				<h2>Kontakt</h2>
+				<div class="col-xs-offset-1">
+					<h3>Katarzyna Stać</h3>
+					<ul class="contact-list">
+						<li>Funkcja: &ensp;Drużynowa</li>
+						<li>Email: &ensp; <a class="label label-warning" href="mailto:stec.katarzyna89@gmail.com">stec.katarzyna89@gmail.com</a></li>
+					</ul>
+					<h3>Krzysztof Orchowski</h3>
+					<ul class="contact-list">
+						<li>Funkcja: &ensp;Kierownik Kręgu Harcerstwa Starszego</li>
+						<li>Email: &ensp; <a class="label label-warning" href="mailto:k.orchowski.08@aberdeen.ac.uk">k.orchowski.08@aberdeen.ac.uk</a></li>
+					</ul>
+					<h3>Piotr Starzec</h3>
+					<ul class="contact-list">
+						<li>Funkcja: &ensp;Skarbnik oraz Administrator strony</li>
+						<li>Email: &ensp; <a class="label label-warning" href="mailto:starzec.piotr.12@gmail.com">starzec.piotr.12@gmail.com</a></li>
+					</ul>
+					<h3>Patrycja Zawilińska</h3>
+					<ul class="contact-list">
+						<li>Funkcja: &ensp;Przyboczna gromady zuchowej</li>
+						<li>Email: &ensp; <a class="label label-warning" href="mailto:pati1133@wp.pl">pati1133@wp.pl</a></li>
+					</ul>
+				</div>
+				</span>
 			</div>
 		</div>
 	</div>
@@ -136,33 +150,11 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 		</div>
 	</div>
 </section>
-<section id="contact" class="container-custom">
-	<!--Recent events-->
+<!--<section id="contact" class="container-custom">
+	Recent events
 	<div class="container container-content">
 		<div class="row very-dark-grey row-custom">
-			<div class="col-md-5 col-lg-offset-1">
-				<h2>Skontaktuj się z nami</h2>
-				<h3>Katarzyna Stać</h3>
-				<ul class="contact-list">
-					<li>Funkcja: &ensp;Drużynowa</li>
-					<li>Email: &ensp; <a class="label label-warning" href="mailto:stec.katarzyna89@gmail.com">stec.katarzyna89@gmail.com</a></li>
-				</ul>
-				<h3>Krzysztof Orchowski</h3>
-				<ul class="contact-list">
-					<li>Funkcja: &ensp;Kierownik Kręgu Harcerstwa Starszego</li>
-					<li>Email: &ensp; <a class="label label-warning" href="mailto:k.orchowski.08@aberdeen.ac.uk">k.orchowski.08@aberdeen.ac.uk</a></li>
-				</ul>
-				<h3>Piotr Starzec</h3>
-				<ul class="contact-list">
-					<li>Funkcja: &ensp;Skarbnik oraz Administrator strony</li>
-					<li>Email: &ensp; <a class="label label-warning" href="mailto:starzec.piotr.12@gmail.com">starzec.piotr.12@gmail.com</a></li>
-				</ul>
-				<h3>Patrycja Zawilińska</h3>
-				<ul class="contact-list">
-					<li>Funkcja: &ensp;Przyboczna gromady zuchowej</li>
-					<li>Email: &ensp; <a class="label label-warning" href="mailto:pati1133@wp.pl">pati1133@wp.pl</a></li>
-				</ul>
-			</div>
+
 		</div>
 	</div>
-</section>
+</section>-->

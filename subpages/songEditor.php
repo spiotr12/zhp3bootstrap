@@ -1,8 +1,9 @@
+<title>Edytor piosenki</title>
 <section id="add-song" class="container-custom">
 	<!--Recent events-->
 	<div class="container container-content song-single-container">
 		<div class="row dark-grey row-custom container-first">
-			<div class="col-md-9 col-lg-offset-1 song-single">
+			<div class="col-md-10 col-md-offset-1 song-single">
 				<?php
 				$do = $_GET['do'];
 				if (isAnyoneLogedIn() == true) {
@@ -30,33 +31,60 @@
 						?>
 
 						<div class="row">
-							<div class="col-lg-4 form-group">
+							<div class="col-md-3 form-group">
 								<label for="title">Tytuł:</label>
-								<input type="text" class="form-control" name="title" id="title" value="<?php
+								<input type="text" class="form-control" required name="title" id="title" value="<?php
 								if ($do == 'edit') {
 									echo $resultArray['title'];
 								}
 								?>"/>
 							</div>
 
-							<div class="col-lg-4 form-group">
+							<div class="col-md-3 form-group">
 								<label for="artist">Artysta:</label>
-								<input type="text" class="form-control" name="artist" id="artist" value="<?php
+								<input type="text" class="form-control" required name="artist" id="artist" value="<?php
 								if ($do == 'edit') {
 									echo $resultArray['artist'];
 								}
 								?>"/>
 							</div>
 
-							<div class="col-lg-4 form-group">
-								<label for="addedBy">Dodane przez:</label>
-								<input type="text" class="form-control" name="addedBy" id="addedBy"  value="<?php
-								if ($do == 'edit') {
-									echo $resultArray['addedBy'];
-								} else {
-									echo $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname'];
-								}
-								?>"/>
+							<div class="col-md-3 form-group">
+								<label for="genre">Garunek:</label>
+								<select class="form-control" name="genre" id="genre">
+									<?php
+									$genre = "";
+									if ($do == 'edit') {
+										$genre = $resultArray['genre'];
+									}
+									?>
+									<option <?php if ($genre == "Harcerskie") { ?>selected="selected" <?php } ?>value="Harcerskie">Harcerskie</option>
+									<option <?php if ($genre == "Biesiadne") { ?>selected="selected" <?php } ?>value="Biesiadne">Biesiadne</option>
+									<option <?php if ($genre == "Szanty") { ?>selected="selected" <?php } ?>value="Szanty">Szanty</option>
+									<option <?php if ($genre == "Religijne") { ?>selected="selected" <?php } ?>value="Religijne">Religijne</option>
+									<option <?php if ($genre == "Różne") { ?>selected="selected" <?php } ?>value="Różne">Różne</option>
+								</select>
+							</div>
+
+							<div class="col-md-3 form-group">
+								<label for="author">Dodane przez:</label>
+								<div class="input-group">
+									<input type="text" class="form-control" required readonly name="addedBy" id="author" value="<?php
+									if ($do == 'edit') {
+										echo $resultArray['addedBy'];
+									} else {
+										echo $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname'];
+									}
+									?>"/>
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button" id='changeEditor'>Zmień</button>
+									</span>
+								</div>
+							</div>
+							<div class="col-md-8 col-md-offset-2 very-dark-grey border-round-5">
+								<p class="padding-top-5">
+									* Jeśli zamieszczasz tekst piosenki razem z chwytami, prosimy, użyj tabeli (tekst w prawej kolumnie, chwyty po lewej). Dziękujemy :)
+								</p>
 							</div>
 						</div>
 
@@ -66,39 +94,32 @@
 								<textarea id="summernote" class="texteditor-custom" name="lyrics"><?php
 									if ($do == 'edit') {
 										echo $resultArray['lyrics'];
-									} 
-//									else {
-//										echo "
-//										<table class='table table-bordered'>
-//											<tbody>
-//											<tr>
-//											<td><br></td>
-//										<td><br></td>
-//										</tr>
-//										</tbody>
-//										</table>
-//										";
-//									}
+									}
 									?></textarea>
 							</div>
-						</div>						
-						<?php
-						if ($do == 'add') {
-							?>
-							<button type="submit" class="btn btn-lg btn-success center-block">
-								<span class="glyphicon glyphicon-plus"></span>
-								Dodaj piosenkę 
+						</div>				
+						<p class="text-center">
+							<button type="submit" class="btn btn-lg btn-success">
+								<?php
+								if ($do == 'add') {
+									?>
+									<span class="glyphicon glyphicon-plus"></span>
+									&nbsp;Dodaj wydarzenie 												
+									<?php
+								} else if ($do == 'edit') {
+									?>
+									<span class="glyphicon glyphicon-floppy-disk"></span>
+									&nbsp;Zapisz zmiany 
+									<?php
+								}
+								?>
+							</button>	
+							lub 
+							<button type="button" class="btn btn-lg btn-danger"  onclick="history.back()">
+								<span class="glyphicon glyphicon-trash"></span>
+								&nbsp;Anuluj 
 							</button>
-							<?php
-						} else if ($do == 'edit') {
-							?>
-							<button type="submit" class="btn btn-lg btn-success center-block">
-								<span class="glyphicon glyphicon-pencil"></span>
-								Zapisz zmiany 
-							</button>
-							<?php
-						}
-						?>
+						</p>
 					</form>
 					<?php
 				} else {

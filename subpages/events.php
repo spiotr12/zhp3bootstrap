@@ -1,3 +1,4 @@
+<title>Wydarzenia</title>
 <section id="events">
 	<div class="jumbotron">
 		<div class="container dark-grey">

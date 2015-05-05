@@ -15,6 +15,7 @@ $id = $_GET["id"];
 				//puts the data from "events" into an array
 				$resultArray = mysqli_fetch_array($tableData);
 				?>
+				<title><?php echo $resultArray['title']; ?></title>
 				<h2><?php echo $resultArray['title']; ?></h2>
 				<?php
 				if (isCurrentUserAdmin()) {

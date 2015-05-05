@@ -1,3 +1,4 @@
+<title>Potwierdź usunięcie</title>
 <section id="login" class="container-custom">
 	<!--Recent events-->
 	<div class="container container-content">
