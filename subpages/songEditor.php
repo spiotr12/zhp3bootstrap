@@ -83,7 +83,7 @@
 							</div>
 							<div class="col-md-8 col-md-offset-2 very-dark-grey border-round-5">
 								<p class="padding-top-5">
-									* Jeśli zamieszczasz tekst piosenki razem z chwytami, prosimy, użyj tabeli (tekst w prawej kolumnie, chwyty po lewej). Dziękujemy :)
+									* Jeśli zamieszczasz tekst piosenki razem z chwytami, prosimy, użyj tabeli (tekst w lewej kolumnie, chwyty po prawej). Dziękujemy :)
 								</p>
 							</div>
 						</div>
@@ -104,7 +104,7 @@
 								if ($do == 'add') {
 									?>
 									<span class="glyphicon glyphicon-plus"></span>
-									&nbsp;Dodaj wydarzenie 												
+									&nbsp;Dodaj piosenkę 												
 									<?php
 								} else if ($do == 'edit') {
 									?>

@@ -41,7 +41,7 @@
 		<div class="row dark-grey row-custom">
 			<?php
 			//collects data from table "events" and sort it by "id" date in descending oreder
-			$query = "SELECT * FROM events ORDER BY id DESC";
+			$query = "SELECT * FROM events ORDER BY happen DESC";
 			$tableData = mysqli_query($db_con, $query)
 					or die(mysqli_error());
 

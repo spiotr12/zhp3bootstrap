@@ -148,10 +148,6 @@ footer{
 	color: white;
 }
 
-.texteditor-custom *{
-	font-weight: normal;
-}
-
 .note-editable{
 	min-height: 40px;
 }
@@ -193,6 +189,11 @@ footer{
 .song-lyrics *{
 	color: white;
 }
+
+.song-lyrics table{
+	margin-left: auto;
+    margin-right: auto;
+}
 @media (max-width : 767px) {
 	.pull-nav-right{
 		float: none;
@@ -210,6 +211,17 @@ footer{
 	}
 }
 
+
+/* ==========================================================================
+   Text editor sorting
+   ========================================================================== */
+.summernote-text-editor * label, .summernote-text-editor * h4{
+	color: black;
+}
+
+.texteditor-custom *{
+	font-weight: normal;
+}
 
 /* ==========================================================================
    Table sorting

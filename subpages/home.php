@@ -24,7 +24,7 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 		<div class="container dark-grey jumbotron-container-container">
 			<span id="title-block">
 				<!--<img id="lilijnka" src="img/logo_medium.png"/>-->
-				<h1 id="h1-main-title">Związek Harcerstwa Polskiego w Aberdeen</h1>
+				<h1 id="h1-main-title" class="font-vivaldi">Związek Harcerstwa Polskiego w Aberdeen</h1>
 			</span>
 
 			<div class="row">
@@ -32,17 +32,18 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 					<img class="img-circle img-responsive logo" src="img/logo_medium.png" />
 				</div>
 				<div class="col-md-8">
-					<p>"Mam szczerą wolę całym życiem pełnić służbę Bogu i Polsce, nieść chętną pomoc bliźnim i być posłusznym Prawu Harcerskiemu." </p>
-					<p> ~ Przyrzeczenie Harcerskie ~ </p>
+					<h3>Witaj strudzony Wędrowcze!</h3>
+					<h3>Zapraszamy do swiata harcerskiej przygody sluzby Bogu Polsce i wszystkim bliznim. </h3>
+					<h3>Wiecej o ZHP w Aberdeen znajdziesz w naszych zakladkach w panelu nawigacyjnym u góry strony.</h3>
 				</div>
 
 				<div class="col-md-7">
 					<h3>Patroni</h3>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-4">
 					<a target="_blank" href="http://edynburg.msz.gov.pl/pl/p/edynburg_gb_k_pl/"><img class="img-thumbnail img-responsive patron" src="img/konsulat.png" /></a>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-4">
 					<a target="_blank" href="http://www.pangeamagazine.com/?lang=pl"><img class="img-thumbnail img-responsive patron" src="img/pangea.png" /></a>
 				</div>
 			</div>
@@ -55,13 +56,13 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 	<!--About the troop-->
 	<div class="container container-custom">
 		<div class="row very-dark-grey row-custom">
-			<div class="col-md-6">
-				<h2>Coś niecoś o nas</h2>
+			<div class="col-md-6 text-justify">
+				<h2>O nas</h2>
 				<?php
 				$aboutUs = file_get_contents('doc/aboutUs.txt');
 				$array = explode(PHP_EOL, $aboutUs);
 				foreach ($array as $p) {
-					echo "<p>" . $p . "</p>";
+					echo "<p class='text-justify'>" . $p . "</p>";
 				}
 				?>
 			</div>
@@ -106,10 +107,10 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 				</div>
 				<span id='contact' class="page-scroll-100">
 				<h2>Kontakt</h2>
-				<div class="col-xs-offset-1">
+				<div class="col-xs-offset-2">
 					<h3>Katarzyna Stać</h3>
 					<ul class="contact-list">
-						<li>Funkcja: &ensp;Drużynowa</li>
+						<li>Funkcja: &ensp;Drużynowa gromady zuchowej</li>
 						<li>Email: &ensp; <a class="label label-warning" href="mailto:stec.katarzyna89@gmail.com">stec.katarzyna89@gmail.com</a></li>
 					</ul>
 					<h3>Krzysztof Orchowski</h3>

@@ -10,9 +10,9 @@
 					<input type="hidden" name="what" value="<?php echo $_GET['what']; ?>">
 					<input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
 					<p>
-						<button class="page-scroll btn btn-danger" type="submit" role="button"><span class='glyphicon glyphicon-trash'></span> Tak potwierdzam</button>
+						<button class="btn btn-danger" type="submit" role="button"><span class='glyphicon glyphicon-trash'></span> Tak potwierdzam</button>
 						lub 
-						<button class="page-scroll btn btn-success" onclick="history.back()" role="button"><span class='glyphicon glyphicon-floppy-disk'></span> Anuluj</button>
+						<a class="btn btn-success" onclick="history.back()"><span class='glyphicon glyphicon-floppy-disk'></span> Anuluj</a>
 					</p>
 				</form>
 			</div>
