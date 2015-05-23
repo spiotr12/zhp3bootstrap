@@ -194,6 +194,7 @@ footer{
 	margin-left: auto;
     margin-right: auto;
 }
+
 @media (max-width : 767px) {
 	.pull-nav-right{
 		float: none;

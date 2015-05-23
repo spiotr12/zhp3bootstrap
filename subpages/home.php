@@ -36,18 +36,19 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 					<h3>Zapraszamy do swiata harcerskiej przygody sluzby Bogu Polsce i wszystkim bliznim. </h3>
 					<h3>Wiecej o ZHP w Aberdeen znajdziesz w naszych zakladkach w panelu nawigacyjnym u góry strony.</h3>
 				</div>
-
-				<div class="col-md-7">
-					<h3>Patroni</h3>
-				</div>
-				<div class="col-xs-4">
-					<a target="_blank" href="http://edynburg.msz.gov.pl/pl/p/edynburg_gb_k_pl/"><img class="img-thumbnail img-responsive patron" src="img/konsulat.png" /></a>
-				</div>
-				<div class="col-xs-4">
-					<a target="_blank" href="http://www.pangeamagazine.com/?lang=pl"><img class="img-thumbnail img-responsive patron" src="img/pangea.png" /></a>
+				<div class="col-md-8 row">
+					<div class="col-md-10">
+						<h3>Patroni</h3>
+					</div>
+					<div class="col-sm-5 col-xs-offset-1">
+						<a target="_blank" href="http://edynburg.msz.gov.pl/pl/p/edynburg_gb_k_pl/"><img class="img-thumbnail img-responsive patron" src="img/konsulat.png" /></a>
+					</div>
+					<div class="col-sm-5 col-xs-offset-1">
+						<a target="_blank" href="http://www.pangeamagazine.com/?lang=pl"><img class="img-thumbnail img-responsive patron" src="img/pangea.png" /></a>
+					</div>
 				</div>
 			</div>
-			<!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
+		<!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
 		</div>
 	</div>
 </section>
@@ -59,6 +60,7 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 			<div class="col-md-6 text-justify">
 				<h2>O nas</h2>
 				<?php
+				// gets content of the txt file and prints each line as a paragraph
 				$aboutUs = file_get_contents('doc/aboutUs.txt');
 				$array = explode(PHP_EOL, $aboutUs);
 				foreach ($array as $p) {
@@ -105,7 +107,7 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 						<span class="sr-only">Następny</span>
 					</a>
 				</div>
-				<span id='contact' class="page-scroll-100">
+<!--				<span id='contact' class="page-scroll-100">
 				<h2>Kontakt</h2>
 				<div class="col-xs-offset-2">
 					<h3>Katarzyna Stać</h3>
@@ -129,11 +131,43 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 						<li>Email: &ensp; <a class="label label-warning" href="mailto:pati1133@wp.pl">pati1133@wp.pl</a></li>
 					</ul>
 				</div>
-				</span>
+				</span>-->
 			</div>
 		</div>
 	</div>
 </section>
+
+<section id="contact" class="container-custom">
+	<!--Recent events-->
+	<div class="container container-content">
+		<div class="row dark-grey row-custom">
+			<div class="col-xs-12 col-xs-offset-1">
+				<h2>Skontaktuj się z nami</h2>
+				<h3>Katarzyna Stać</h3>
+				<ul class="contact-list">
+					<li>Funkcja: &ensp;Drużynowa gromady zuchowej</li>
+					<li>Email: &ensp; <a class="label label-warning" href="mailto:stec.katarzyna89@gmail.com">stec.katarzyna89@gmail.com</a></li>
+				</ul>
+				<h3>Krzysztof Orchowski</h3>
+				<ul class="contact-list">
+					<li>Funkcja: &ensp;Kierownik Kręgu Harcerstwa Starszego</li>
+					<li>Email: &ensp; <a class="label label-warning" href="mailto:k.orchowski.08@aberdeen.ac.uk">k.orchowski.08@aberdeen.ac.uk</a></li>
+				</ul>
+				<h3>Piotr Starzec</h3>
+				<ul class="contact-list">
+					<li>Funkcja: &ensp;Skarbnik oraz Administrator strony</li>
+					<li>Email: &ensp; <a class="label label-warning" href="mailto:starzec.piotr.12@gmail.com">starzec.piotr.12@gmail.com</a></li>
+				</ul>
+				<h3>Patrycja Zawilińska</h3>
+				<ul class="contact-list">
+					<li>Funkcja: &ensp;Przyboczna gromady zuchowej</li>
+					<li>Email: &ensp; <a class="label label-warning" href="mailto:pati1133@wp.pl">pati1133@wp.pl</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
 
 <section id="recent_events" class="container-custom" style="display: none">
 	<!--Recent events-->
