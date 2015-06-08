@@ -78,7 +78,7 @@
 									echo "<td class='text-center col-md-2'>";
 									echo "	<a class='page-scroll btn btn-sm btn-warning' href='index.php?link=songEdit&do=edit&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-pencil'></span> Edytuj</a>";
 									if (isCurrentUserAdmin()) {
-										echo "	<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=delete&what=song&&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-trash'></span> Usuń";
+										echo "	<a class='page-scroll btn btn-sm btn-danger' href='index.php?link=delete&what=song&&id=" . $resultArray['id'] . "' role='button'><span class='glyphicon glyphicon-trash'></span> Usuń</a>";
 									}
 									echo "</td>";
 								}

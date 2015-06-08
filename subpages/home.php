@@ -33,8 +33,8 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 				</div>
 				<div class="col-md-8">
 					<h3>Witaj strudzony Wędrowcze!</h3>
-					<h3>Zapraszamy do swiata harcerskiej przygody sluzby Bogu Polsce i wszystkim bliznim. </h3>
-					<h3>Wiecej o ZHP w Aberdeen znajdziesz w naszych zakladkach w panelu nawigacyjnym u góry strony.</h3>
+					<h3>Zapraszamy do świata harcerskiej przygody służby Bogu Polsce i wszystkim bliźnim. </h3>
+					<h3>Więcej o ZHP w Aberdeen znajdziesz w naszych zakładkach w panelu nawigacyjnym u góry strony.</h3>
 				</div>
 				<div class="col-md-8 row">
 					<div class="col-md-10">

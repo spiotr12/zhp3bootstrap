@@ -190,9 +190,10 @@ footer{
 	color: white;
 }
 
-.song-lyrics table{
+.song-lyrics > table{
 	margin-left: auto;
     margin-right: auto;
+	color: yellow;
 }
 
 @media (max-width : 767px) {
