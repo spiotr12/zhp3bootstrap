@@ -32,9 +32,9 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 					<img class="img-circle img-responsive logo" src="img/logo_medium.png" />
 				</div>
 				<div class="col-md-8">
-					<h3>Witaj strudzony Wędrowcze!</h3>
-					<h3>Zapraszamy do świata harcerskiej przygody służby Bogu Polsce i wszystkim bliźnim. </h3>
-					<h3>Więcej o ZHP w Aberdeen znajdziesz w naszych zakładkach w panelu nawigacyjnym u góry strony.</h3>
+				<h3>Witaj strudzony Wędrowcze!</h3>
+					<h3>Zapraszamy do świata harcerskiej przygody służby Bogu Polsce i wszystkim bliźnim.</h3>
+					<h3>Więcej o Harcerstwie Polskim w Aberdeen znajdziesz w naszych zakładkach w panelu nawigacyjnym u góry strony lub poniżej.</h3>
 				</div>
 				<div class="col-md-8 row">
 					<div class="col-md-10">
@@ -143,11 +143,6 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 		<div class="row dark-grey row-custom">
 			<div class="col-xs-12 col-xs-offset-1">
 				<h2>Skontaktuj się z nami</h2>
-				<h3>Katarzyna Stać</h3>
-				<ul class="contact-list">
-					<li>Funkcja: &ensp;Drużynowa gromady zuchowej</li>
-					<li>Email: &ensp; <a class="label label-warning" href="mailto:stec.katarzyna89@gmail.com">stec.katarzyna89@gmail.com</a></li>
-				</ul>
 				<h3>Krzysztof Orchowski</h3>
 				<ul class="contact-list">
 					<li>Funkcja: &ensp;Kierownik Kręgu Harcerstwa Starszego</li>
@@ -158,11 +153,15 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 					<li>Funkcja: &ensp;Skarbnik oraz Administrator strony</li>
 					<li>Email: &ensp; <a class="label label-warning" href="mailto:starzec.piotr.12@gmail.com">starzec.piotr.12@gmail.com</a></li>
 				</ul>
-				<h3>Patrycja Zawilińska</h3>
+<!--				<h3>Katarzyna Stać</h3>
+				<ul class="contact-list">
+					<li>Funkcja: &ensp;Drużynowa gromady zuchowej</li>
+					<li>Email: &ensp; <a class="label label-warning" href="mailto:stec.katarzyna89@gmail.com">stec.katarzyna89@gmail.com</a></li>
+				</ul>				<h3>Patrycja Zawilińska</h3>
 				<ul class="contact-list">
 					<li>Funkcja: &ensp;Przyboczna gromady zuchowej</li>
 					<li>Email: &ensp; <a class="label label-warning" href="mailto:pati1133@wp.pl">pati1133@wp.pl</a></li>
-				</ul>
+				</ul>-->
 			</div>
 		</div>
 	</div>
