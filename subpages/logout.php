@@ -2,6 +2,7 @@
 if (isset($_SESSION['sess_user_active'])) {
 	echo "<meta http-equiv='refresh' content='0.01'>";
 }
+// destroy session
 $_SESSION['sess_user_active'] = null;
 $_SESSION['sess_user_id'] = null;
 //	$_SESSION['sess_admin'] = null;

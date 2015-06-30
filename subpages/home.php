@@ -32,7 +32,7 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 					<img class="img-circle img-responsive logo" src="img/logo_medium.png" />
 				</div>
 				<div class="col-md-8">
-				<h3>Witaj strudzony Wędrowcze!</h3>
+					<h3>Witaj strudzony Wędrowcze!</h3>
 					<h3>Zapraszamy do świata harcerskiej przygody służby Bogu Polsce i wszystkim bliźnim.</h3>
 					<h3>Więcej o Harcerstwie Polskim w Aberdeen znajdziesz w naszych zakładkach w panelu nawigacyjnym u góry strony lub poniżej.</h3>
 				</div>
@@ -70,6 +70,9 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 			</div>
 			<div class="col-md-6">
 				<h2>Zdjęcia</h2>
+				<p>
+					<br/>
+				</p>
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
 					<?php
 					$caruselImagesDirectory = "./img/slideshow";
@@ -111,22 +114,22 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 				<h2>Kontakt</h2>
 				<div class="col-xs-offset-2">
 					<h3>Katarzyna Stać</h3>
-					<ul class="contact-list">
+					<ul class="def-text-color">
 						<li>Funkcja: &ensp;Drużynowa gromady zuchowej</li>
 						<li>Email: &ensp; <a class="label label-warning" href="mailto:stec.katarzyna89@gmail.com">stec.katarzyna89@gmail.com</a></li>
 					</ul>
 					<h3>Krzysztof Orchowski</h3>
-					<ul class="contact-list">
+					<ul class="def-text-color">
 						<li>Funkcja: &ensp;Kierownik Kręgu Harcerstwa Starszego</li>
 						<li>Email: &ensp; <a class="label label-warning" href="mailto:k.orchowski.08@aberdeen.ac.uk">k.orchowski.08@aberdeen.ac.uk</a></li>
 					</ul>
 					<h3>Piotr Starzec</h3>
-					<ul class="contact-list">
+					<ul class="def-text-color">
 						<li>Funkcja: &ensp;Skarbnik oraz Administrator strony</li>
 						<li>Email: &ensp; <a class="label label-warning" href="mailto:starzec.piotr.12@gmail.com">starzec.piotr.12@gmail.com</a></li>
 					</ul>
 					<h3>Patrycja Zawilińska</h3>
-					<ul class="contact-list">
+					<ul class="def-text-color">
 						<li>Funkcja: &ensp;Przyboczna gromady zuchowej</li>
 						<li>Email: &ensp; <a class="label label-warning" href="mailto:pati1133@wp.pl">pati1133@wp.pl</a></li>
 					</ul>
@@ -144,24 +147,24 @@ if (!empty($_GET['error']) && $_GET['error'] == 'success') {
 			<div class="col-xs-12 col-xs-offset-1">
 				<h2>Skontaktuj się z nami</h2>
 				<h3>Krzysztof Orchowski</h3>
-				<ul class="contact-list">
+				<ul class="def-text-color">
 					<li>Funkcja: &ensp;Kierownik Kręgu Harcerstwa Starszego</li>
 					<li>Email: &ensp; <a class="label label-warning" href="mailto:k.orchowski.08@aberdeen.ac.uk">k.orchowski.08@aberdeen.ac.uk</a></li>
 				</ul>
 				<h3>Piotr Starzec</h3>
-				<ul class="contact-list">
+				<ul class="def-text-color">
 					<li>Funkcja: &ensp;Skarbnik oraz Administrator strony</li>
 					<li>Email: &ensp; <a class="label label-warning" href="mailto:starzec.piotr.12@gmail.com">starzec.piotr.12@gmail.com</a></li>
 				</ul>
-<!--				<h3>Katarzyna Stać</h3>
-				<ul class="contact-list">
-					<li>Funkcja: &ensp;Drużynowa gromady zuchowej</li>
-					<li>Email: &ensp; <a class="label label-warning" href="mailto:stec.katarzyna89@gmail.com">stec.katarzyna89@gmail.com</a></li>
-				</ul>				<h3>Patrycja Zawilińska</h3>
-				<ul class="contact-list">
-					<li>Funkcja: &ensp;Przyboczna gromady zuchowej</li>
-					<li>Email: &ensp; <a class="label label-warning" href="mailto:pati1133@wp.pl">pati1133@wp.pl</a></li>
-				</ul>-->
+				<!--				<h3>Katarzyna Stać</h3>
+								<ul class="def-text-color">
+									<li>Funkcja: &ensp;Drużynowa gromady zuchowej</li>
+									<li>Email: &ensp; <a class="label label-warning" href="mailto:stec.katarzyna89@gmail.com">stec.katarzyna89@gmail.com</a></li>
+								</ul>				<h3>Patrycja Zawilińska</h3>
+								<ul class="def-text-color">
+									<li>Funkcja: &ensp;Przyboczna gromady zuchowej</li>
+									<li>Email: &ensp; <a class="label label-warning" href="mailto:pati1133@wp.pl">pati1133@wp.pl</a></li>
+								</ul>-->
 			</div>
 		</div>
 	</div>

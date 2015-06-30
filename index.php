@@ -85,9 +85,9 @@ include './php/scripts.php'; // gets scripts
 								<li>
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#about_troop">O nas</a>
 								</li>
-								<li class="disabled">
+<!--								<li class="disabled">
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#recent_events">Aktualności</a>
-								</li>
+								</li>-->
 								<li>
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "home") ?>#contact">Kontakt</a>
 								</li>
@@ -104,17 +104,17 @@ include './php/scripts.php'; // gets scripts
 								<li>
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "events") ?>#events">Wydarzenia</a>
 								</li>
-								<li class="disabled">
+<!--								<li class="disabled">
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "chronicle") ?>#chronicle">Kronika</a>
-								</li>
+								</li>-->
 								<li>
 									<a class="page-scroll" target="_blank" href="gallery">Galeria</a>
 								</li>
-								<li class="divider"></li>
+<!--								<li class="divider"></li>
 								<li class="dropdown-header">Techniczne:</li>
 								<li class="disabled">
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "uniforms") ?>#uniforms">Umundurowanie</a>
-								</li>
+								</li>-->
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -126,9 +126,9 @@ include './php/scripts.php'; // gets scripts
 								<li>
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "library") ?>#library">Książki</a>
 								</li>
-								<li class="disabled">
+<!--								<li class="disabled">
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "documents") ?>#documents">Dokumenty</a>
-								</li>
+								</li>-->
 								<li>
 									<a class="page-scroll" href="<?php isInParentTab($subpage, "songbook") ?>#songbook">Śpiewnik</a>
 								</li>
@@ -157,7 +157,7 @@ include './php/scripts.php'; // gets scripts
 									Współpraca
 								</li>
 								<li>
-									<a target="_blank" href="http://www.aberdeen.edu.pl/">Polska Szkoła</a>
+									<a target="_blank" href="http://www.aberdeen.edu.pl/">Polska Szkoła w Aberdeen</a>
 								</li>
 								<li>
 									<a target="_blank" href="http://www.pccaberdeen.co.uk/">Polish Catholic Community</a>
@@ -260,16 +260,21 @@ include './php/scripts.php'; // gets scripts
 				break;
 			case "logout" : $directory = './subpages/logout.php';
 				break;
-//			case "profile" : $directory =  './subpages/profile.php';
-//				break;
+//			case "profile" :
+//				if (isAnyoneLogedIn()) {
+//					$directory = './subpages/profile.php';
+//				} else {
+//					$directory = './subpages/login.php';
+//				}
+//					break;
 			case "songEdit" : $directory = './subpages/songEditor.php';
 				break;
 			case "eventEdit" : $directory = './subpages/eventEditor.php';
 				break;
 			case "delete" : $directory = './subpages/confirmDelete.php';
 				break;
-//			case "adminTools" : $directory =  './subpages/admintools.php';
-//				break;
+			case "adminTools" : $directory =  './subpages/admintools.php';
+				break;
 			// default; if there is no option
 			default : $directory = './subpages/nopage.php';
 				break;
@@ -307,32 +312,12 @@ include './php/scripts.php'; // gets scripts
 	<script src="js/vendor/jquery.easing.min.js"></script>
 	<script src="js/vendor/scrolling-nav.js"></script>
 	<script src="js/vendor/jquery.tablesorter.js"></script>
-
-	<script src="js/main.js"></script>
-	<!--standard scripts end-->
-
+	
 	<!--summernote text editor start-->
 	<script src="js/summernote.min.js"></script>
 
-	<script>
-		$(document).ready(function () {
-			// text editor
-			$('#summernote').summernote();
-//			$('textarea.note-codable').attr('name', 'editorTextArea');
-//			$('textarea.note-codable').attr('id', 'editorTextArea');
-//			
-			// sortable table
-			$('#sorttable').tablesorter();
-			
-			// date picker with date format
-			$('#datepicker').datepicker({dateFormat: 'yy-mm-dd'});
-			
-			//editor author edit button
-			$('#changeEditor').click(function(){
-				$('#author').prop('readonly', false);
-			})
-		});
-	</script>
+	<script src="js/main.js"></script>
+	
 	<!--summernote text editor start-->
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 	<script>

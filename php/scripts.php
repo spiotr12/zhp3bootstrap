@@ -61,4 +61,9 @@ function getUserName() {
 	return $_SESSION['sess_firstname'] . " " . $_SESSION['sess_lastname'];
 }
 
+// returns users email
+function getUserEmail() {
+	return $_SESSION['sess_email'];
+}
+
 ?>
